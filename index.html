@@ -141,11 +141,15 @@
             text-decoration: none;
         }
 
+        /* 오른쪽(DRB 소개) 가장자리를 로고 왼쪽에 고정하고, 긴 번역은 왼쪽으로 확장 */
         .global-nav .left-button {
             position: absolute;
-            left: 22px;
+            left: auto;
+            right: calc(50% + 96px);
             display: flex;
             align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
             gap: 8px;
         }
 
@@ -160,6 +164,8 @@
             border-radius: 980px;
             transition: all 0.3s;
             font-family: inherit;
+            white-space: nowrap;
+            flex: 0 0 auto;
         }
 
         .global-nav .btn-design:hover {
