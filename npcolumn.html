@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NP-Column — 다이아프램 일체형 합성기둥. 철골 물량 절감과 현장 용접 최소화를 실현하는 2세대 합성기둥 기술 자료.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NP-Column - 다이아프램 일체형 합성기둥">
+    <meta property="og:description" content="Neo Posco Column. 강관·콘크리트 합성과 다이아프램 일체화로 제작비와 현장 작업량을 줄인 합성기둥.">
+    <meta property="og:image" content="assets/images/og-bestobeam.webp">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NP-Column - 다이아프램 일체형 합성기둥">
+    <meta name="twitter:description" content="Neo Posco Column. 강관·콘크리트 합성과 다이아프램 일체화로 제작비와 현장 작업량을 줄인 합성기둥.">
+    <meta name="twitter:image" content="assets/images/og-bestobeam.webp">
     <title>NP-Column - 다이아프램 일체형 합성기둥</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* [Design Tokens] */
@@ -24,7 +34,7 @@
             --color-surface-tile-1: #25282d;
             --color-canvas-parchment: #f3f6fa;
             --color-text-dark: #17202a;
-            --color-text-secondary: #657384;
+            --color-text-secondary: #5a6878;
             --color-border: #dbe4ee;
             --color-nav-bg: #111111;
             --spacing-section: 80px;
@@ -70,6 +80,78 @@
            (더 구체적인 선택자에서 height를 지정한 이미지는 영향받지 않음) */
         img {
             height: auto;
+        }
+
+        /* [Accessibility] */
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 100000;
+            padding: 12px 18px;
+            background: var(--color-primary);
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(15, 99, 168, 0.28);
+        }
+
+        .skip-link:focus {
+            top: 12px;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0 8px;
+        }
+
+        .hero-cta .btn-primary,
+        .hero-cta .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 20px;
+            border-radius: var(--rounded-pill);
+            font-size: 15px;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-cta .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+            border: 1px solid var(--color-primary);
+        }
+
+        .hero-cta .btn-primary:hover {
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .hero-cta .btn-secondary {
+            background: #fff;
+            color: var(--color-primary-dark);
+            border: 1px solid rgba(15, 99, 168, 0.35);
+        }
+
+        .hero-cta .btn-secondary:hover {
+            background: rgba(15, 99, 168, 0.07);
+            border-color: var(--color-primary);
         }
 
         /* [Navigation] */
@@ -203,8 +285,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            min-height: 38px;
-            padding: 8px 14px;
+            min-height: 44px;
+            padding: 10px 14px;
             border: 1px solid rgba(15, 99, 168, 0.16);
             border-radius: 14px;
             background: #fff;
@@ -360,7 +442,7 @@
             background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
         }
 
-        .technical-box h3 {
+        .technical-box h2 {
             font-size: 23px;
             font-weight: 700;
             line-height: 1.32;
@@ -478,14 +560,14 @@
             display: none;
         }
 
-        .beam-definition > summary h3 {
+        .beam-definition > summary h2 {
             font-size: 21px;
             font-weight: 700;
             color: var(--color-text-dark);
             transition: color 0.2s ease;
         }
 
-        .beam-definition > summary:hover h3 {
+        .beam-definition > summary:hover h2 {
             color: var(--color-primary);
         }
 
@@ -581,8 +663,8 @@
         }
 
         .feature-card p {
-            font-size: 14px;
-            color: var(--color-text-secondary);
+            font-size: 16px;
+            color: var(--color-text-dark);
             line-height: 1.62;
         }
 
@@ -869,7 +951,7 @@
             :root {
                 --spacing-section: 36px;
                 --spacing-element: 24px;
-                --nav-height-global: 86px;
+                --nav-height-global: 100px;
                 --nav-height-tabs: 48px;
             }
 
@@ -911,8 +993,11 @@
 
             .global-nav .left-button .btn-design {
                 flex: 0 0 auto;
-                font-size: 10px;
-                padding: 4px 10px;
+                font-size: 12px;
+                padding: 10px 14px;
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
             }
 
             .global-nav .left-button .btn-design + .btn-design {
@@ -923,7 +1008,7 @@
                 position: static;
                 grid-area: tools;
                 justify-self: end;
-                gap: 8px;
+                gap: 10px;
             }
 
             .global-nav .nav-tools .right-logo {
@@ -939,12 +1024,13 @@
             }
 
             .lang-selector {
-                gap: 4px;
+                gap: 8px;
             }
 
             .lang-btn {
-                font-size: 10px;
-                padding: 3px 7px;
+                font-size: 12px;
+                padding: 10px 12px;
+                min-height: 44px;
             }
 
             .tab-wrapper {
@@ -984,6 +1070,7 @@
                 width: 100%;
                 flex: 0 0 auto;
                 padding: 13px 15px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 15px;
                 text-align: left;
@@ -999,6 +1086,7 @@
                 width: 100%;
                 justify-content: space-between;
                 padding: 12px 14px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 14px;
             }
@@ -1031,7 +1119,7 @@
                 border-radius: 14px;
             }
 
-            .technical-box h3 {
+            .technical-box h2 {
                 font-size: 20px;
             }
 
@@ -1105,13 +1193,13 @@
                 gap: 18px !important;
             }
 
-            #economy .technical-box > h3 {
+            #economy .technical-box > h2 {
                 flex-direction: column;
                 align-items: flex-start !important;
                 gap: 10px;
             }
 
-            #economy .technical-box > h3 span[id$="-badge"] {
+            #economy .technical-box > h2 span[id$="-badge"] {
                 align-self: flex-start;
             }
 
@@ -1612,12 +1700,14 @@
 
 <body>
 
+    <a class="skip-link" href="#overview">본문으로 건너뛰기</a>
+
     <nav class="global-nav">
         <div class="nav-container">
             <div class="left-button">
                 <a href="index.html" class="btn-design back-link">BESTOBEAM</a>
             </div>
-            <a href="#" class="logo">NP-COLUMN</a>
+            <a href="index.html" class="logo">NP-COLUMN</a>
             <div class="nav-tools">
                 <span class="nav-org">POSCO 강건재솔루션</span>
             </div>
@@ -1655,6 +1745,11 @@
             <h1 class="section-headline">NP-Column: <br>다이아프램 일체형 합성기둥.</h1>
             <p class="section-subhead">Neo Posco Column. 강관과 콘크리트의 합성 효과에 다이아프램 일체화를 더해, 제작비와 현장 작업량을 동시에 줄인 2세대
                 합성기둥입니다.</p>
+            <div class="hero-cta">
+                <a class="btn-primary" href="mailto:jwkim10@posco.com">기술 문의하기</a>
+                <a class="btn-secondary" href="#feature" onclick="showTab(null, 'feature'); return false;">기술자료 보기</a>
+            </div>
+
 
             <div class="feature-grid">
                 <div class="feature-card feature-card--primary">
@@ -1687,7 +1782,7 @@
             </div>
 
             <div class="technical-box">
-                <h3>합성구조의 원리</h3>
+                <h2>합성구조의 원리</h2>
                 <p>강관과 콘크리트는 서로의 약점을 보완합니다. 콘크리트는 압축에 강하지만 인장에 약하고, 가는 강재는 인장에 강하지만 압축에서 좌굴합니다. 두 재료를 합성하면 각자의 약점이
                     상쇄됩니다.</p>
                 <ul>
@@ -1698,7 +1793,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3>세대별 발전 과정</h3>
+                <h2>세대별 발전 과정</h2>
                 <p>포스코 합성기둥은 1세대 P-Column 계열을 거쳐, 제작성과 접합부 상세를 개선한 2세대 NP-Column으로 발전했습니다.</p>
             </div>
 
@@ -1786,7 +1881,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>국내 합성기둥 공법 비교</h3>
+                <h2>국내 합성기둥 공법 비교</h2>
                 <p>제작 방식과 다이아프램 처리 방법이 공법별 원가와 시공성을 가르는 핵심 변수입니다. 비교 대상은 개별 제품명 대신 <strong>타 공법
                         A~D</strong>로 표기했습니다.</p>
             </div>
@@ -1923,7 +2018,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px; border-left: 5px solid var(--color-danger);">
-                <h3>기존 각형강관 · CFT 접합부의 한계</h3>
+                <h2>기존 각형강관 · CFT 접합부의 한계</h2>
                 <p>폐단면 합성기둥에 철골보를 접합하면 하중 재하 시 강관 플랜지가 변형되므로, 기둥 손상을 막기 위한 수평방향 보강이 반드시 필요합니다. 내·외·관통 어느 상세를 쓰더라도 수평
                     다이아프램을 피할 수 없습니다.</p>
                 <ul>
@@ -1945,7 +2040,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px; border-left: 5px solid var(--color-primary);">
-                <h3>NP-Column의 접합부 해법</h3>
+                <h2>NP-Column의 접합부 해법</h2>
                 <p>내다이아프램을 절곡 리브에 용접해 부착하면, 기둥을 조립하는 것만으로 연속 다이아프램이 완성됩니다. ESW 설비 없이 공장 제작이 가능해집니다.</p>
             </div>
 
@@ -1961,7 +2056,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>참고 — 1세대(P-Column) 접합부 상세</h3>
+                <h2>참고 — 1세대(P-Column) 접합부 상세</h2>
                 <p>1세대는 불연속 내다이아프램에 수직 스티프너와 수직 플레이트를 덧대어 연속 다이아프램 효과를 냈습니다. NP-Column은 이 보강 물량을 리브 일체화로 대체했습니다.</p>
             </div>
 
@@ -1996,7 +2091,7 @@
             <p class="section-subhead">절곡부터 비파괴검사까지 전 공정을 공장에서 수행하여, 현장에는 조립만 남깁니다.</p>
 
             <div class="technical-box">
-                <h3>4단계 표준 제작 공정</h3>
+                <h2>4단계 표준 제작 공정</h2>
                 <div class="process-flow">
                     <div class="flow-step">
                         <span class="step-number">01</span>
@@ -2040,7 +2135,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3>제작비를 낮추는 두 가지 선택</h3>
+                <h2>제작비를 낮추는 두 가지 선택</h2>
                 <ul>
                     <li><strong>Flare 용접:</strong> 중앙부 리브를 ㄱ자로 추가 절곡한 뒤 Flare 용접하여, 완전용입(CJP) 용접 대비 제작비를 낮추고 용접
                         입열에 의한 변형을 제어합니다.</li>
@@ -2058,7 +2153,7 @@
             <p class="section-subhead">기둥 자체의 압축성능, 접합부의 내진성능, 그리고 23m 높이 콘크리트 충전성까지 실험으로 확인했습니다.</p>
 
             <div class="technical-box">
-                <h3>기둥 압축성능 평가</h3>
+                <h2>기둥 압축성능 평가</h2>
                 <p>직사각형 단주와 정사각형 장주 두 가지 실험체로 압축성능을 평가했습니다. 최대 하중 <strong>5,844kN</strong>으로 설계강도를 크게 상회했습니다.</p>
             </div>
 
@@ -2096,7 +2191,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px; border-left: 5px solid var(--color-warm);">
-                <h3>접합부 내진성능 실험</h3>
+                <h2>접합부 내진성능 실험</h2>
                 <ul>
                     <li>최대 내력이 설계 소성모멘트(M<sub>pe</sub>)의 <strong>1.21~1.36배</strong>에 도달했습니다.</li>
                     <li>회전각 4% Cycle에서 보 플랜지 국부좌굴 관측 후 강도 저하가 발생했으나, <strong>기둥 및 접합부에는 변형이 없었습니다.</strong></li>
@@ -2159,7 +2254,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px; border-left: 5px solid var(--color-accent);">
-                <h3>콘크리트 충전성 평가</h3>
+                <h2>콘크리트 충전성 평가</h2>
                 <p>높이 23m 강관(□-200x0.8T, 배출홀 ○-150@1000)에 콘크리트를 타설하여 충전 상태를 검증했습니다. 슬럼프 플로우 실측값은 640mm였습니다.</p>
             </div>
 
@@ -2228,7 +2323,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3>현장 검증 — 롯데 청량리 현장</h3>
+                <h2>현장 검증 — 롯데 청량리 현장</h2>
                 <p>실험실 검증에 이어 실제 현장에서 매립형 트레미관 설치, 타설 후 타격검사, 시험 천공을 통해 충전 품질을 재확인했습니다.</p>
             </div>
 
@@ -2267,10 +2362,10 @@
             </div>
 
             <div class="technical-box case-card case-card--primary" style="margin-top: 40px;">
-                <h3 class="case-heading">
+                <h2 class="case-heading">
                     <span>청량리 한양수자인 신축공사 (지하 PRD column)</span>
                     <span class="case-badge">현장 적용 완료</span>
-                </h3>
+                </h2>
 
                 <div class="table-scroll">
                     <table class="table-compact" style="min-width: 560px;">
@@ -2301,7 +2396,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3>MAIN 부재 리스트 — 당초설계 대비 대안설계</h3>
+                <h2>MAIN 부재 리스트 — 당초설계 대비 대안설계</h2>
                 <p>강종 SM460 적용. H형강 대비 단면을 키우면서도 판두께를 9~12mm로 낮춰 물량을 줄였습니다.</p>
             </div>
 
@@ -2449,7 +2544,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>특허 등록</h3>
+                <h2>특허 등록</h2>
                 <p>NP-Column, P-Box-Column, P-Column 3개 계열에 대해 특허를 등록했습니다.</p>
                 <ul>
                     <li><strong>공동 권리자:</strong> 포스코, 포스코건설, 한라, 한양, 피컴스</li>
@@ -2463,7 +2558,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>엔지니어링 서비스 — Supply Chain</h3>
+                <h2>엔지니어링 서비스 — Supply Chain</h2>
                 <p>전문 설계사와 제작사가 역할을 나눠 맡는 공급망(S/C)을 구축하여, 설계부터 납품까지 단일 창구로 대응합니다.</p>
             </div>
 
@@ -2486,7 +2581,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>기술 문의</h3>
+                <h2>기술 문의</h2>
                 <p>설계 · 제작 · 기술 검토 문의는 아래 담당자에게 연락 주시기 바랍니다.</p>
             </div>
 

@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BESTOBEAM 합성보 — H-section과 U-section 하이브리드 설계로 강재량 절감과 시공 편의성을 동시에 실현하는 기술 제안서.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BESTOBEAM - Technical Specification & Solution">
+    <meta property="og:description" content="H-section과 U-section 하이브리드 합성보. 강재량 30~40% 절감, 기존 H형강과 동일한 시공성.">
+    <meta property="og:image" content="assets/images/og-bestobeam.webp">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BESTOBEAM - Technical Specification & Solution">
+    <meta name="twitter:description" content="H-section과 U-section 하이브리드 합성보. 강재량 30~40% 절감, 기존 H형강과 동일한 시공성.">
+    <meta name="twitter:image" content="assets/images/og-bestobeam.webp">
     <title>BESTOBEAM - Technical Specification & Solution</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* [Design Tokens] */
@@ -24,7 +34,7 @@
             --color-surface-tile-1: #25282d;
             --color-canvas-parchment: #f3f6fa;
             --color-text-dark: #17202a;
-            --color-text-secondary: #657384;
+            --color-text-secondary: #5a6878;
             --color-border: #dbe4ee;
             --color-nav-bg: #111111;
             --spacing-section: 80px;
@@ -70,6 +80,78 @@
            (더 구체적인 선택자에서 height를 지정한 이미지는 영향받지 않음) */
         img {
             height: auto;
+        }
+
+        /* [Accessibility] */
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 100000;
+            padding: 12px 18px;
+            background: var(--color-primary);
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(15, 99, 168, 0.28);
+        }
+
+        .skip-link:focus {
+            top: 12px;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0 8px;
+        }
+
+        .hero-cta .btn-primary,
+        .hero-cta .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 20px;
+            border-radius: var(--rounded-pill);
+            font-size: 15px;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-cta .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+            border: 1px solid var(--color-primary);
+        }
+
+        .hero-cta .btn-primary:hover {
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .hero-cta .btn-secondary {
+            background: #fff;
+            color: var(--color-primary-dark);
+            border: 1px solid rgba(15, 99, 168, 0.35);
+        }
+
+        .hero-cta .btn-secondary:hover {
+            background: rgba(15, 99, 168, 0.07);
+            border-color: var(--color-primary);
         }
 
         /* [Navigation] */
@@ -248,8 +330,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            min-height: 38px;
-            padding: 8px 14px;
+            min-height: 44px;
+            padding: 10px 14px;
             border: 1px solid rgba(15, 99, 168, 0.16);
             border-radius: 14px;
             background: #fff;
@@ -405,7 +487,7 @@
             background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
         }
 
-        .technical-box h3 {
+        .technical-box h2 {
             font-size: 23px;
             font-weight: 700;
             line-height: 1.32;
@@ -523,14 +605,14 @@
             display: none;
         }
 
-        .beam-definition > summary h3 {
+        .beam-definition > summary h2 {
             font-size: 21px;
             font-weight: 700;
             color: var(--color-text-dark);
             transition: color 0.2s ease;
         }
 
-        .beam-definition > summary:hover h3 {
+        .beam-definition > summary:hover h2 {
             color: var(--color-primary);
         }
 
@@ -626,8 +708,8 @@
         }
 
         .feature-card p {
-            font-size: 14px;
-            color: var(--color-text-secondary);
+            font-size: 16px;
+            color: var(--color-text-dark);
             line-height: 1.62;
         }
 
@@ -842,6 +924,7 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
+            min-height: 44px;
             color: var(--color-text-dark);
             text-decoration: none;
             font-size: 15px;
@@ -1034,7 +1117,7 @@
             :root {
                 --spacing-section: 36px;
                 --spacing-element: 24px;
-                --nav-height-global: 86px;
+                --nav-height-global: 100px;
                 --nav-height-tabs: 48px;
             }
 
@@ -1076,8 +1159,11 @@
 
             .global-nav .left-button .btn-design {
                 flex: 0 0 auto;
-                font-size: 10px;
-                padding: 4px 10px;
+                font-size: 12px;
+                padding: 10px 14px;
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
             }
 
             .global-nav .left-button .btn-design + .btn-design {
@@ -1088,7 +1174,7 @@
                 position: static;
                 grid-area: tools;
                 justify-self: end;
-                gap: 8px;
+                gap: 10px;
             }
 
             .global-nav .nav-tools .right-logo {
@@ -1104,12 +1190,13 @@
             }
 
             .lang-selector {
-                gap: 4px;
+                gap: 8px;
             }
 
             .lang-btn {
-                font-size: 10px;
-                padding: 3px 7px;
+                font-size: 12px;
+                padding: 10px 12px;
+                min-height: 44px;
             }
 
             .tab-wrapper {
@@ -1149,6 +1236,7 @@
                 width: 100%;
                 flex: 0 0 auto;
                 padding: 13px 15px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 15px;
                 text-align: left;
@@ -1164,6 +1252,7 @@
                 width: 100%;
                 justify-content: space-between;
                 padding: 12px 14px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 14px;
             }
@@ -1196,7 +1285,7 @@
                 border-radius: 14px;
             }
 
-            .technical-box h3 {
+            .technical-box h2 {
                 font-size: 20px;
             }
 
@@ -1270,13 +1359,13 @@
                 gap: 18px !important;
             }
 
-            #economy .technical-box > h3 {
+            #economy .technical-box > h2 {
                 flex-direction: column;
                 align-items: flex-start !important;
                 gap: 10px;
             }
 
-            #economy .technical-box > h3 span[id$="-badge"] {
+            #economy .technical-box > h2 span[id$="-badge"] {
                 align-self: flex-start;
             }
 
@@ -1382,6 +1471,8 @@
 
 <body>
 
+    <a class="skip-link" href="#overview">본문으로 건너뛰기</a>
+
     <nav class="global-nav">
         <div class="nav-container">
             <div class="left-button">
@@ -1390,7 +1481,7 @@
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
-            <a href="#" class="logo">BESTOBEAM</a>
+            <a href="#overview" class="logo">BESTOBEAM</a>
             <div class="nav-tools">
                 <div class="lang-selector">
                     <button onclick="changeLang(this, 'ko')" data-lang="ko" class="lang-btn active">KR</button>
@@ -1399,7 +1490,7 @@
                     <button onclick="changeLang(this, 'vi')" data-lang="vi" class="lang-btn">VN</button>
                 </div>
                 <div class="right-logo">
-                    <img width="123" height="42" decoding="async" src="assets/images/drb.webp" alt="DRB Logo">
+                    <img loading="lazy" width="123" height="42" decoding="async" src="assets/images/drb.webp" alt="DRB Logo">
                 </div>
             </div>
         </div>
@@ -1439,10 +1530,15 @@
             <h1 id="overview-title" class="section-headline">BESTOBEAM: <br>합성보의 장점과 시공 편의성의 결합.</h1>
             <p id="overview-subhead" class="section-subhead">『BEst Solution TO customer』 BEAM. H-section과 U-section의
                 하이브리드 설계로 시공성을 혁신합니다.</p>
+            <div class="hero-cta">
+                <a id="hero-cta-contact" class="btn-primary" href="mailto:kim.hee.hoon@drbworld.com">기술 문의하기</a>
+                <a id="hero-cta-docs" class="btn-secondary" href="#certification" onclick="showTab(null, 'certification'); return false;">기술자료 보기</a>
+            </div>
+
 
             <details class="beam-definition">
                 <summary>
-                    <h3 id="beam-def-title">💡 보(Beam)란 무엇인가요?</h3>
+                    <h2 id="beam-def-title">💡 보(Beam)란 무엇인가요?</h2>
                     <span class="chevron" aria-hidden="true"></span>
                 </summary>
                 <div class="beam-definition-body">
@@ -1454,7 +1550,7 @@
                         </p>
                     </div>
                     <div class="beam-art">
-                        <img loading="lazy" width="431" height="585" decoding="async" src="assets/images/beam.webp" alt="건물 뼈대에서 가로 부재인 '보'를 강조한 개념도">
+                        <img width="431" height="585" decoding="async" src="assets/images/beam.webp" alt="건물 뼈대에서 가로 부재인 '보'를 강조한 개념도">
                     </div>
                 </div>
             </details>
@@ -1488,7 +1584,7 @@
             </div>
 
             <div class="technical-box">
-                <h3 id="comp-title">베스토빔의 구성 및 사양 (사용강종: SM355 또는 동등 성능 강종)</h3>
+                <h2 id="comp-title">베스토빔의 구성 및 사양 (사용강종: SM355 또는 동등 성능 강종)</h2>
                 <p id="comp-desc">베스토빔은 정밀하게 가공된 각 부속 요소들의 결합을 통해 구조적 무결성을 유지합니다.</p>
                 <div class="spec-grid">
                     <ul>
@@ -1523,7 +1619,7 @@
             <h1 id="princ-title" class="section-headline">단면 설계 최적화 로직.</h1>
             <p id="princ-subhead" class="section-subhead">모멘트 크기에 따른 부재의 변동적 배치로 강재 효율을 극대화합니다.</p>
             <div class="technical-box">
-                <h3 id="princ-load-title">하중 분포에 따른 단면 배치</h3>
+                <h2 id="princ-load-title">하중 분포에 따른 단면 배치</h2>
                 <p id="princ-load-desc">연속보에서 지점부(단부)는 큰 부모멘트(-)가 발생하며, 중앙부는 정모멘트(+)가 발생합니다. BESTOBEAM은 이 메커니즘을 정확히
                     추종합니다.</p>
                 <ul>
@@ -1536,7 +1632,7 @@
                 <img loading="lazy" width="961" height="507" decoding="async" src="assets/images/2-1.webp" alt="모멘트 선도와 연동된 BESTOBEAM의 단면 최적화 배치 개념도" class="product-image">
             </div>
             <div class="technical-box">
-                <h3 id="princ-proc-title">구조 설계 프로세스</h3>
+                <h2 id="princ-proc-title">구조 설계 프로세스</h2>
                 <div class="process-flow">
                     <div class="flow-step">
                         <span class="step-number">01</span>
@@ -1568,14 +1664,14 @@
             <h1 id="test-title" class="section-headline">실증적 검증: <br>RIST/KOLAS 인증 실험 결과.</h1>
             <p id="test-subhead" class="section-subhead">공인 기관의 엄격한 테스트를 통해 구조 성능과 안전성을 입증했습니다.</p>
             <div class="technical-box">
-                <h3 id="test-bend-title">휨 성능 실험 (Bending Performance)</h3>
+                <h2 id="test-bend-title">휨 성능 실험 (Bending Performance)</h2>
                 <p id="test-bend-desc">설계 강도 대비 120% 이상의 내력을 발휘하며, 안정적인 하중-변위 곡선을 나타내어 구조적 신뢰성을 확보했습니다.</p>
             </div>
             <div class="product-image-container">
                 <img loading="lazy" width="1191" height="771" decoding="async" src="assets/images/3-1.webp" alt="하중-변위 그래프 및 RIST 실험체 가력 전경" class="product-image">
             </div>
             <div class="technical-box">
-                <h3 id="test-shear-title">전단 연결재 거동 실험 (Shear Connector Test)</h3>
+                <h2 id="test-shear-title">전단 연결재 거동 실험 (Shear Connector Test)</h2>
                 <p id="test-shear-desc">단부 H형강과 중앙부 U형강의 접합부에서 발생하는 전단력 흐름의 연속성을 검증하여 일체형 거동을 확인했습니다.</p>
             </div>
             <div class="product-image-container">
@@ -1584,7 +1680,7 @@
 
             <!-- [추가: 내진 성능] -->
             <div class="technical-box" style="margin-top: 40px; border-left: 5px solid #ff9500;">
-                <h3 id="test-seismic-title">내진 성능 (Seismic Performance)</h3>
+                <h2 id="test-seismic-title">내진 성능 (Seismic Performance)</h2>
                 <ul style="list-style: none; margin-left: 0; margin-top: 15px;">
                     <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
                         <span style="font-size: 18px; color: var(--color-text-dark);">➢</span>
@@ -1611,7 +1707,7 @@
             <p id="cert-subhead" class="section-subhead">국내외 공인 기관을 통해 검증된 기술력으로 최상의 신뢰를 제공합니다.</p>
 
             <div class="technical-box">
-                <h3 id="cert-intel-title">국내외 기술인증 및 지식재산권</h3>
+                <h2 id="cert-intel-title">국내외 기술인증 및 지식재산권</h2>
                 <p id="cert-intel-desc">건설신기술 지정을 포함하여 국내외 특허 및 구조기술사회의 엄격한 기술 검증을 완료했습니다.</p>
                 <ul style="margin-top: 10px;">
                     <li id="cert-net"><strong>건설신기술(NET) 지정 [제 835호]:</strong> 국토교통부 신기술 지정 (H형-U형 조합 합성보 공법)</li>
@@ -1624,7 +1720,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3 id="cert-icc-title">미국 ICC-ES 인증 획득</h3>
+                <h2 id="cert-icc-title">미국 ICC-ES 인증 획득</h2>
                 <p id="cert-icc-desc">글로벌 건축물 설계 및 시공 기준을 충족하여 해외 시장에서의 기술적 신뢰성을 확보했습니다.</p>
                 <ul style="margin-top: 10px;">
                     <li id="cert-icc-no"><strong>인증번호:</strong> ESR-4134 (ICC-ES Evaluation Report)</li>
@@ -1646,7 +1742,7 @@
             <p id="proc-subhead" class="section-subhead">기존 공법의 친숙한 접합 방식에 무거푸집 기술을 결합하여 공기 단축과 현장 안전성을 동시에 실현합니다.</p>
 
             <div class="technical-box" style="margin-top: 20px; border-left: 5px solid var(--color-primary);">
-                <h3 id="proc-girder-title">Girder 접합 특징</h3>
+                <h2 id="proc-girder-title">Girder 접합 특징</h2>
                 <ul style="list-style: none; margin-left: 0; margin-top: 15px;">
                     <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
                         <span style="font-size: 18px; color: var(--color-text-dark);">➢</span>
@@ -1666,7 +1762,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 20px; border-left: 5px solid #5856d6;">
-                <h3 id="proc-beam-title">Beam 접합 특징</h3>
+                <h2 id="proc-beam-title">Beam 접합 특징</h2>
                 <ul style="list-style: none; margin-left: 0; margin-top: 15px;">
                     <li style="display: flex; align-items: flex-start; gap: 10px;">
                         <span style="font-size: 18px; color: var(--color-text-dark);">➢</span>
@@ -1681,7 +1777,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 30px;">
-                <h3 id="proc-step-title">표준 시공 순서</h3>
+                <h2 id="proc-step-title">표준 시공 순서</h2>
                 <ul>
                     <li id="proc-step-1"><strong>(1) Base Plate 및 철골 기둥 설치:</strong> 기초 베이스 플레이트 고정 및 기둥 하단 설치</li>
                     <li id="proc-step-2"><strong>(2) 철골 기둥 세우기:</strong> 상부 철골 기둥 인양 및 수직 조립</li>
@@ -1699,7 +1795,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3 id="proc-video-title">현장 설치 영상 — 제주공항 증축공사</h3>
+                <h2 id="proc-video-title">현장 설치 영상 — 제주공항 증축공사</h2>
                 <p id="proc-video-desc">실제 현장에서 베스토빔이 인양·거치되는 과정입니다. 기존 H형강과 동일한 접합 방식으로 진행되어 별도의 숙련 과정이 필요하지
                     않습니다.</p>
             </div>
@@ -1724,11 +1820,11 @@
 
             <!-- [Case 1: 숙박시설] -->
             <div class="technical-box case-card case-card--primary" style="margin-bottom: 40px;">
-                <h3 class="case-heading">
+                <h2 class="case-heading">
                     <span id="econ-case1-title">CASE 01. 숙박시설 VE 적용 사례 (2F~11F)</span>
                     <span id="econ-case1-badge" class="case-badge">지상층
                         적용성 평가 완료</span>
-                </h3>
+                </h2>
 
                 <div class="case-grid">
                     <div>
@@ -1781,11 +1877,11 @@
 
             <!-- [Case 2: 물류창고] -->
             <div class="technical-box case-card case-card--violet">
-                <h3 class="case-heading">
+                <h2 class="case-heading">
                     <span id="econ-case2-title">CASE 02. 대형 물류창고 VE 적용 사례</span>
                     <span id="econ-case2-badge" class="case-badge">초고하중/장스팬
                         최적화</span>
-                </h3>
+                </h2>
 
                 <div class="case-grid">
                     <div>
@@ -1846,7 +1942,7 @@
             <h1 id="height-title" class="section-headline">건축적 가치: <br>층고 절감 및 공간 창출.</h1>
             <p id="height-subhead" class="section-subhead">슬림해진 보 춤(Beam Depth)을 통해 건물 전체의 공간 효율을 극대화합니다.</p>
             <div class="technical-box">
-                <h3 id="height-box-title">층당 200~400mm 층고 절감</h3>
+                <h2 id="height-box-title">층당 200~400mm 층고 절감</h2>
                 <p id="height-box-desc">결과: 동일 건물 높이에서 더 높은 천장고를 제공하거나 전체 층수를 늘려 분양 수익성을 높일 수 있습니다.</p>
             </div>
             <div class="product-image-container">
@@ -1861,7 +1957,7 @@
             <h1 id="vib-title" class="section-headline">정숙한 환경을 위한 <br>진동 제어 기술.</h1>
             <p id="vib-subhead" class="section-subhead">콘크리트 충전 효과를 통한 강성 증대로 쾌적한 거주 환경을 제공합니다.</p>
             <div class="technical-box">
-                <h3 id="vib-box-title" style="margin-bottom: 20px;">진동 특성 분석 및 성능 평가</h3>
+                <h2 id="vib-box-title" style="margin-bottom: 20px;">진동 특성 분석 및 성능 평가</h2>
 
                 <div style="margin-bottom: 25px;">
                     <p id="vib-item1-title"
@@ -2224,7 +2320,7 @@
 
             <!-- 전체 실적 요약 테이블 -->
             <div class="technical-box" style="margin-top: 50px;">
-                <h3 id="ref-summary-title" style="margin-bottom: 20px;">전체 실적 요약 (Summary)</h3>
+                <h2 id="ref-summary-title" style="margin-bottom: 20px;">전체 실적 요약 (Summary)</h2>
                 <div style="overflow-x: auto;">
                     <table
                         style="width: 100%; font-size: 13px; text-align: left; border-collapse: collapse; min-width: 800px;">
@@ -2467,6 +2563,8 @@
                 'btn-drb-text': 'DRB 소개',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': '중공PC기둥',
+                'hero-cta-contact': '기술 문의하기',
+                'hero-cta-docs': '기술자료 보기',
                 'overview-title': 'BESTOBEAM: <br>합성보의 장점과 시공 편의성의 결합.',
 
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. H-section과 U-section의 하이브리드 설계로 시공성을 혁신합니다.',
@@ -2711,6 +2809,8 @@
                 'btn-drb-text': 'About DRB',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': 'Hollow PC Column',
+                'hero-cta-contact': 'Contact Us',
+                'hero-cta-docs': 'View Technical Docs',
                 'overview-title': 'BESTOBEAM: <br>Advantage of Composite Beams & Ease of Construction.',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. Innovating construction with a hybrid H/U-section design.',
                 'beam-def-title': '💡 What is a Beam?',
@@ -2949,6 +3049,8 @@
                 'btn-drb-text': 'DRB 简介',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': '中空PC柱',
+                'hero-cta-contact': '技术咨询',
+                'hero-cta-docs': '查看技术资料',
                 'overview-title': 'BESTOBEAM: <br>组合梁优势与施工便捷性的完美结合。',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM。通过H型截面与U型截面的混合设计，革新施工效率。',
                 'beam-def-title': '💡 什么是梁（Beam）？',
@@ -3188,6 +3290,8 @@
                 'btn-drb-text': 'Giới thiệu DRB',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': 'Cột PC rỗng',
+                'hero-cta-contact': 'Liên hệ kỹ thuật',
+                'hero-cta-docs': 'Xem tài liệu kỹ thuật',
                 'overview-title': 'BESTOBEAM: <br>Sự kết hợp giữa ưu điểm của dầm composite và sự tiện lợi trong thi công.',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. Đổi mới khả năng thi công với thiết kế hybrid giữa phần H và phần U.',
                 'beam-def-title': '💡 Dầm (Beam) là gì?',

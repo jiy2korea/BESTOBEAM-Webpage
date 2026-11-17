@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="합성보 × 중공PC기둥 접합부 — 수직 H형강 기둥 없이 하중경로를 확보하고 반복가력 실험으로 성능을 검증한 기술 자료.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="합성보 × 중공PC기둥 접합부 - BESTOBEAM">
+    <meta property="og:description" content="BESTOBEAM 합성보와 중공PC기둥 접합부. 경제성과 시공성을 구조성능으로 검증한 공동연구 기술 자료.">
+    <meta property="og:image" content="assets/images/og-bestobeam.webp">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="합성보 × 중공PC기둥 접합부 - BESTOBEAM">
+    <meta name="twitter:description" content="BESTOBEAM 합성보와 중공PC기둥 접합부. 경제성과 시공성을 구조성능으로 검증한 공동연구 기술 자료.">
+    <meta name="twitter:image" content="assets/images/og-bestobeam.webp">
     <title>합성보 × 중공PC기둥 접합부 - BESTOBEAM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -25,7 +35,7 @@
             --color-surface-tile-1: #25282d;
             --color-canvas-parchment: #f3f6fa;
             --color-text-dark: #17202a;
-            --color-text-secondary: #657384;
+            --color-text-secondary: #5a6878;
             --color-border: #dbe4ee;
             --color-nav-bg: #111111;
             --spacing-section: 80px;
@@ -71,6 +81,78 @@
            (더 구체적인 선택자에서 height를 지정한 이미지는 영향받지 않음) */
         img {
             height: auto;
+        }
+
+        /* [Accessibility] */
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 100000;
+            padding: 12px 18px;
+            background: var(--color-primary);
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(15, 99, 168, 0.28);
+        }
+
+        .skip-link:focus {
+            top: 12px;
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0 8px;
+        }
+
+        .hero-cta .btn-primary,
+        .hero-cta .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 20px;
+            border-radius: var(--rounded-pill);
+            font-size: 15px;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-cta .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+            border: 1px solid var(--color-primary);
+        }
+
+        .hero-cta .btn-primary:hover {
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .hero-cta .btn-secondary {
+            background: #fff;
+            color: var(--color-primary-dark);
+            border: 1px solid rgba(15, 99, 168, 0.35);
+        }
+
+        .hero-cta .btn-secondary:hover {
+            background: rgba(15, 99, 168, 0.07);
+            border-color: var(--color-primary);
         }
 
         /* [Navigation] */
@@ -249,8 +331,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            min-height: 38px;
-            padding: 8px 14px;
+            min-height: 44px;
+            padding: 10px 14px;
             border: 1px solid rgba(15, 99, 168, 0.16);
             border-radius: 14px;
             background: #fff;
@@ -406,7 +488,7 @@
             background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
         }
 
-        .technical-box h3 {
+        .technical-box h2 {
             font-size: 23px;
             font-weight: 700;
             line-height: 1.32;
@@ -524,14 +606,14 @@
             display: none;
         }
 
-        .beam-definition > summary h3 {
+        .beam-definition > summary h2 {
             font-size: 21px;
             font-weight: 700;
             color: var(--color-text-dark);
             transition: color 0.2s ease;
         }
 
-        .beam-definition > summary:hover h3 {
+        .beam-definition > summary:hover h2 {
             color: var(--color-primary);
         }
 
@@ -627,8 +709,8 @@
         }
 
         .feature-card p {
-            font-size: 14px;
-            color: var(--color-text-secondary);
+            font-size: 16px;
+            color: var(--color-text-dark);
             line-height: 1.62;
         }
 
@@ -915,7 +997,7 @@
             :root {
                 --spacing-section: 36px;
                 --spacing-element: 24px;
-                --nav-height-global: 86px;
+                --nav-height-global: 100px;
                 --nav-height-tabs: 48px;
             }
 
@@ -957,8 +1039,11 @@
 
             .global-nav .left-button .btn-design {
                 flex: 0 0 auto;
-                font-size: 10px;
-                padding: 4px 10px;
+                font-size: 12px;
+                padding: 10px 14px;
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
             }
 
             .global-nav .left-button .btn-design + .btn-design {
@@ -969,7 +1054,7 @@
                 position: static;
                 grid-area: tools;
                 justify-self: end;
-                gap: 8px;
+                gap: 10px;
             }
 
             .global-nav .nav-tools .right-logo {
@@ -985,12 +1070,13 @@
             }
 
             .lang-selector {
-                gap: 4px;
+                gap: 8px;
             }
 
             .lang-btn {
-                font-size: 10px;
-                padding: 3px 7px;
+                font-size: 12px;
+                padding: 10px 12px;
+                min-height: 44px;
             }
 
             .tab-wrapper {
@@ -1030,6 +1116,7 @@
                 width: 100%;
                 flex: 0 0 auto;
                 padding: 13px 15px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 15px;
                 text-align: left;
@@ -1045,6 +1132,7 @@
                 width: 100%;
                 justify-content: space-between;
                 padding: 12px 14px;
+                min-height: 44px;
                 border-radius: 12px;
                 font-size: 14px;
             }
@@ -1077,7 +1165,7 @@
                 border-radius: 14px;
             }
 
-            .technical-box h3 {
+            .technical-box h2 {
                 font-size: 20px;
             }
 
@@ -1165,13 +1253,13 @@
                 gap: 18px !important;
             }
 
-            #economy .technical-box > h3 {
+            #economy .technical-box > h2 {
                 flex-direction: column;
                 align-items: flex-start !important;
                 gap: 10px;
             }
 
-            #economy .technical-box > h3 span[id$="-badge"] {
+            #economy .technical-box > h2 span[id$="-badge"] {
                 align-self: flex-start;
             }
 
@@ -1827,7 +1915,7 @@
             box-shadow: var(--shadow-card);
         }
 
-        .case-block > h3 {
+        .case-block > h2 {
             font-size: 21px;
             font-weight: 700;
             color: var(--color-text-dark);
@@ -1899,12 +1987,14 @@
 
 <body>
 
+    <a class="skip-link" href="#overview">본문으로 건너뛰기</a>
+
     <nav class="global-nav">
         <div class="nav-container">
             <div class="left-button">
                 <a href="index.html" class="btn-design back-link">BESTOBEAM</a>
             </div>
-            <a href="#" class="logo">중공PC기둥 접합부</a>
+            <a href="index.html" class="logo">중공PC기둥 접합부</a>
             <div class="nav-tools">
                 <span class="nav-org">THE PICK R&amp;D × DRB</span>
             </div>
@@ -1940,9 +2030,14 @@
         <div class="container">
             <h1 class="section-headline">합성보와 중공PC기둥, <br>접합부에서 하나로.</h1>
             <p class="section-subhead">별도의 수직 H형강 기둥 없이 하중경로를 확보하고, 반복가력 실험으로 성능을 확인했습니다.</p>
+            <div class="hero-cta">
+                <a class="btn-primary" href="mailto:kim.hee.hoon@drbworld.com">기술 문의하기</a>
+                <a class="btn-secondary" href="#system" onclick="showTab(null, 'system'); return false;">기술자료 보기</a>
+            </div>
+
 
             <div class="technical-box">
-                <h3>왜 접합부인가</h3>
+                <h2>왜 접합부인가</h2>
                 <p>장스팬·고하중 산업건축은 <strong>보의 효율</strong>과 <strong>기둥의 경량화</strong>를 동시에 요구합니다. 그러나 두 시스템 사이의 하중전달이
                     불명확하면, 각 공법의 장점은 구조 시스템으로 이어지지 않습니다.</p>
             </div>
@@ -1988,7 +2083,7 @@
             <p class="section-subhead">필요한 곳에 필요한 단면을 두는 합성보와, 중공화로 경량화한 PC기둥이 만납니다.</p>
 
             <div class="technical-box">
-                <h3>SYSTEM 01 — BESTOBEAM: 필요한 곳에 필요한 단면</h3>
+                <h2>SYSTEM 01 — BESTOBEAM: 필요한 곳에 필요한 단면</h2>
                 <p>단부는 접합에 유리한 H형강, 중앙부는 콘크리트와 합성되는 U형 단면으로 구성해 모멘트 분포에 맞춰 강재를 효율적으로 배치합니다. 기존 철골 접합 방식을 그대로
                     활용합니다.</p>
             </div>
@@ -2013,7 +2108,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>SYSTEM 02 — 중공PC기둥: 경량화와 내부 구속 확보</h3>
+                <h2>SYSTEM 02 — 중공PC기둥: 경량화와 내부 구속 확보</h2>
                 <p>기둥 속을 비워 무게를 줄이고, 비운 자리를 이중으로 구속해 내진성능을 확보한 PC기둥입니다.</p>
             </div>
 
@@ -2157,7 +2252,7 @@
             </figure>
 
             <div class="technical-box" style="margin-top: 40px; border-left: 5px solid var(--color-primary);">
-                <h3>접합부 설계 체크 포인트</h3>
+                <h2>접합부 설계 체크 포인트</h2>
                 <ul>
                     <li><strong>① 브라켓 전단 전달:</strong> 보 단부 전단력이 웹과 엔드플레이트를 통해 확실히 전달되는가</li>
                     <li><strong>② 주철근 강도 연속성:</strong> 용접커플러 연결부가 주철근의 강도를 그대로 잇는가</li>
@@ -2165,7 +2260,7 @@
                 </ul>
             </div>
 
-            <h3 style="margin-top: 60px; font-size: 22px; font-weight: 700;">공장에서 정밀하게, 현장에서는 단순하게</h3>
+            <h2 style="margin-top: 60px; font-size: 22px; font-weight: 700;">공장에서 정밀하게, 현장에서는 단순하게</h2>
             <p style="color: #424245; margin-top: 10px; line-height: 1.7;">접합부 핵심 부품과 철근을 기둥 제작 단계에서 통합하면, 현장에서는 조립·정착·충전에
                 집중할 수 있습니다.</p>
 
@@ -2269,7 +2364,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px; border-left: 5px solid var(--color-primary);">
-                <h3>상부근 + 단부 H형강 → 부모멘트 공동 저항</h3>
+                <h2>상부근 + 단부 H형강 → 부모멘트 공동 저항</h2>
                 <p>상부근이 늘어난 만큼 단부 H형강의 플랜지·웹 두께를 줄일 수 있습니다. 철근 증가분을 반영한 순 절감이 아래 수치입니다.</p>
             </div>
 
@@ -2299,7 +2394,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 34px;">
-                <h3>검토 조건</h3>
+                <h2>검토 조건</h2>
                 <ul>
                     <li><strong>기둥:</strong> 단위 부재 기준. 선조립 합성기둥의 주근량(축방향 강도)을 확보하도록 철골을 철근으로 등가 단면 환산하여 중공PC기둥으로
                         변경. 변경 후 주근 최소철근비가 1% 미만이면 최소철근 배치.</li>
@@ -2311,7 +2406,7 @@
 
             <!-- 데이터센터 A -->
             <div class="case-block">
-                <h3>데이터센터 A <span class="module-tag">검토 모듈 43.8m × 12.0m</span></h3>
+                <h2>데이터센터 A <span class="module-tag">검토 모듈 43.8m × 12.0m</span></h2>
 
                 <figure class="figure-wide is-scroll-x" style="margin-top: 24px;">
                     <img loading="lazy" width="1076" height="485" decoding="async" src="assets/images/pc/dc-a-module.webp"
@@ -2430,7 +2525,7 @@
 
             <!-- 데이터센터 B -->
             <div class="case-block">
-                <h3>데이터센터 B <span class="module-tag">검토 모듈 19.5m × 10.8m</span></h3>
+                <h2>데이터센터 B <span class="module-tag">검토 모듈 19.5m × 10.8m</span></h2>
 
                 <figure class="figure-wide" style="margin-top: 24px;">
                     <img loading="lazy" width="1400" height="648" decoding="async" src="assets/images/pc/dc-b-module.webp" alt="데이터센터 B 기준층 구조평면도와 검토 모듈 범위 (19.5m x 10.8m)">
@@ -2498,7 +2593,7 @@
 
             <!-- 종합 -->
             <div class="technical-box" style="margin-top: 44px; border-left: 5px solid var(--color-success);">
-                <h3>2개 사례 종합</h3>
+                <h2>2개 사례 종합</h2>
                 <ul>
                     <li><strong>기둥:</strong> 중공PC기둥은 SRC 기둥 대비 <strong>3.9~19.6%</strong>, 선조립 합성기둥 대비
                         <strong>12.8~31.4%</strong>의 공사비 감소</li>
@@ -2556,12 +2651,12 @@
             </div>
 
             <div class="technical-box" style="margin-top: 40px;">
-                <h3>평가 프레임 — KDS 41 20 10 (2024)</h3>
+                <h2>평가 프레임 — KDS 41 20 10 (2024)</h2>
                 <p>보–기둥 모멘트접합부 동등성 기준에 따라 <strong>강도 · 반복하중 유지 · 강성 · 에너지소산</strong> 네 가지 항목을 동일 조건에서 비교했습니다.</p>
             </div>
 
             <div class="technical-box" style="margin-top: 40px; border-left: 5px solid var(--color-warm);">
-                <h3>하중–변위각 이력</h3>
+                <h2>하중–변위각 이력</h2>
                 <p>ACT-LOAD와 DISP를 가력점 높이 <strong>3,500 mm</strong> 기준 변위각으로 환산해 비교했습니다. 합성보 접합부는 RC보 접합부보다 더 큰 정·부방향
                     최대하중을 나타냈습니다. KDS 검토 변위각 2.0%·3.5%를 포함하는 범위에서 반복가력 성능을 확인했습니다.</p>
             </div>
@@ -2617,7 +2712,7 @@
             <p class="footnote">※ 두 실험체는 보 형식과 설계내력이 다릅니다(합성율 34.0% 반영). 절대 최대하중 차이에는 보 단면 차이가 포함됩니다.</p>
 
             <div class="technical-box" style="margin-top: 50px; border-left: 5px solid var(--color-success);">
-                <h3>강성·에너지소산까지 모두 만족</h3>
+                <h2>강성·에너지소산까지 모두 만족</h2>
                 <p>KDS 41 20 10 (2024)의 절대·상대 동등성 기준으로 두 접합부 모두 최종 만족했습니다. 합성보 접합부는 <strong>에너지소산과 한계변위 강성</strong>에서
                     더 큰 값을 보였습니다.</p>
                 <ul>
@@ -2684,7 +2779,7 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h3>손상은 기록하고, 성능은 기준으로 판단</h3>
+                <h2>손상은 기록하고, 성능은 기준으로 판단</h2>
                 <p>반복가력 후 균열과 국부 손상 양상을 전면 기록했습니다. 사진은 육안 관찰 자료이며, 최종 동등성 판단은 계측값과 KDS 기준에 근거합니다.</p>
             </div>
 
