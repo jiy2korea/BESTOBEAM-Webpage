@@ -109,51 +109,6 @@
             outline-offset: 2px;
         }
 
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 22px 0 8px;
-        }
-
-        .hero-cta .btn-primary,
-        .hero-cta .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 44px;
-            padding: 10px 20px;
-            border-radius: var(--rounded-pill);
-            font-size: 15px;
-            font-weight: 700;
-            font-family: inherit;
-            text-decoration: none;
-            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .hero-cta .btn-primary {
-            background: var(--color-primary);
-            color: #fff;
-            border: 1px solid var(--color-primary);
-        }
-
-        .hero-cta .btn-primary:hover {
-            background: var(--color-primary-dark);
-            border-color: var(--color-primary-dark);
-            transform: translateY(-1px);
-        }
-
-        .hero-cta .btn-secondary {
-            background: #fff;
-            color: var(--color-primary-dark);
-            border: 1px solid rgba(15, 99, 168, 0.35);
-        }
-
-        .hero-cta .btn-secondary:hover {
-            background: rgba(15, 99, 168, 0.07);
-            border-color: var(--color-primary);
-        }
-
         /* [Navigation] */
         .global-nav {
             position: fixed;
@@ -1481,7 +1436,7 @@
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
-            <a href="#overview" class="logo">BESTOBEAM</a>
+            <a href="#" class="logo">BESTOBEAM</a>
             <div class="nav-tools">
                 <div class="lang-selector">
                     <button onclick="changeLang(this, 'ko')" data-lang="ko" class="lang-btn active">KR</button>
@@ -1530,11 +1485,6 @@
             <h1 id="overview-title" class="section-headline">BESTOBEAM: <br>합성보의 장점과 시공 편의성의 결합.</h1>
             <p id="overview-subhead" class="section-subhead">『BEst Solution TO customer』 BEAM. H-section과 U-section의
                 하이브리드 설계로 시공성을 혁신합니다.</p>
-            <div class="hero-cta">
-                <a id="hero-cta-contact" class="btn-primary" href="mailto:kim.hee.hoon@drbworld.com">기술 문의하기</a>
-                <a id="hero-cta-docs" class="btn-secondary" href="#certification" onclick="showTab(null, 'certification'); return false;">기술자료 보기</a>
-            </div>
-
 
             <details class="beam-definition">
                 <summary>
@@ -2563,8 +2513,6 @@
                 'btn-drb-text': 'DRB 소개',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': '중공PC기둥',
-                'hero-cta-contact': '기술 문의하기',
-                'hero-cta-docs': '기술자료 보기',
                 'overview-title': 'BESTOBEAM: <br>합성보의 장점과 시공 편의성의 결합.',
 
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. H-section과 U-section의 하이브리드 설계로 시공성을 혁신합니다.',
@@ -2809,8 +2757,6 @@
                 'btn-drb-text': 'About DRB',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': 'Hollow PC Column',
-                'hero-cta-contact': 'Contact Us',
-                'hero-cta-docs': 'View Technical Docs',
                 'overview-title': 'BESTOBEAM: <br>Advantage of Composite Beams & Ease of Construction.',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. Innovating construction with a hybrid H/U-section design.',
                 'beam-def-title': '💡 What is a Beam?',
@@ -3049,8 +2995,6 @@
                 'btn-drb-text': 'DRB 简介',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': '中空PC柱',
-                'hero-cta-contact': '技术咨询',
-                'hero-cta-docs': '查看技术资料',
                 'overview-title': 'BESTOBEAM: <br>组合梁优势与施工便捷性的完美结合。',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM。通过H型截面与U型截面的混合设计，革新施工效率。',
                 'beam-def-title': '💡 什么是梁（Beam）？',
@@ -3290,8 +3234,6 @@
                 'btn-drb-text': 'Giới thiệu DRB',
                 'btn-np-text': 'NP Column',
                 'btn-pc-text': 'Cột PC rỗng',
-                'hero-cta-contact': 'Liên hệ kỹ thuật',
-                'hero-cta-docs': 'Xem tài liệu kỹ thuật',
                 'overview-title': 'BESTOBEAM: <br>Sự kết hợp giữa ưu điểm của dầm composite và sự tiện lợi trong thi công.',
                 'overview-subhead': '『BEst Solution TO customer』 BEAM. Đổi mới khả năng thi công với thiết kế hybrid giữa phần H và phần U.',
                 'beam-def-title': '💡 Dầm (Beam) là gì?',
