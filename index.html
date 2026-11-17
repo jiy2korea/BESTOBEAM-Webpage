@@ -150,22 +150,25 @@
             align-items: center;
             justify-content: flex-end;
             flex-wrap: nowrap;
-            gap: 8px;
+            gap: 6px;
         }
 
+        /* 우측 언어 토글(lang-btn)과 글자·패딩·알약 형태를 맞춤 */
         .global-nav .btn-design {
             background: rgba(255, 255, 255, 0.08);
             cursor: pointer;
-            font-size: 12.5px;
+            font-size: 11.5px;
+            font-weight: 500;
             color: #fff;
             text-decoration: none;
-            padding: 5px 12px;
+            padding: 3px 8px;
             border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 980px;
             transition: all 0.3s;
             font-family: inherit;
             white-space: nowrap;
             flex: 0 0 auto;
+            line-height: 1.2;
         }
 
         .global-nav .btn-design:hover {
@@ -1439,6 +1442,7 @@
             <div class="left-button">
                 <a id="btn-design-text" href="https://besto-dev.agreeabletree-f610a989.koreacentral.azurecontainerapps.io/" target="_blank"
                     class="btn-design">BESTOBEAM 설계</a>
+                <a id="btn-gennx-text" href="#" class="btn-design">마이다스 GEN NX 플러그인</a>
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
@@ -2515,6 +2519,7 @@
                 'nav-vibration': '진동 성능',
                 'nav-reference': '주요 실적',
                 'btn-design-text': 'BESTOBEAM 설계',
+                'btn-gennx-text': '마이다스 GEN NX 플러그인',
                 'btn-video-text': '홍보영상',
                 'btn-drb-text': 'DRB 소개',
                 'btn-np-text': 'NP Column',
@@ -2759,6 +2764,7 @@
                 'nav-vibration': 'Vibration',
                 'nav-reference': 'References',
                 'btn-design-text': 'BESTOBEAM Design',
+                'btn-gennx-text': 'MIDAS GEN NX Plugin',
                 'btn-video-text': 'Promotion Video',
                 'btn-drb-text': 'About DRB',
                 'btn-np-text': 'NP Column',
@@ -2997,6 +3003,7 @@
                 'nav-vibration': '振动性能',
                 'nav-reference': '主要业绩',
                 'btn-design-text': 'BESTOBEAM 设计',
+                'btn-gennx-text': 'MIDAS GEN NX 插件',
                 'btn-video-text': '宣传视频',
                 'btn-drb-text': 'DRB 简介',
                 'btn-np-text': 'NP Column',
@@ -3236,6 +3243,7 @@
                 'nav-vibration': 'Chống rung',
                 'nav-reference': 'Dự án',
                 'btn-design-text': 'Thiết kế BESTOBEAM',
+                'btn-gennx-text': 'Plugin MIDAS GEN NX',
                 'btn-video-text': 'Video quảng bá',
                 'btn-drb-text': 'Giới thiệu DRB',
                 'btn-np-text': 'NP Column',
