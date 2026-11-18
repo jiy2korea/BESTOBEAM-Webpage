@@ -1842,6 +1842,60 @@
             margin-top: 0;
         }
 
+        #gennx .plugin-shot-slot {
+            margin: var(--spacing-element) 0 0;
+            max-width: var(--fig-full);
+        }
+
+        #gennx .plugin-shot-slot img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-product);
+            background: #fff;
+        }
+
+        #gennx .plugin-shot-slot figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .plugin-shot-missing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 220px;
+            padding: 28px 20px;
+            text-align: center;
+            border-radius: 14px;
+            border: 1px dashed rgba(15, 99, 168, 0.35);
+            background:
+                linear-gradient(180deg, #f7fafc 0%, var(--color-surface-muted) 100%);
+            color: var(--color-primary-dark);
+        }
+
+        #gennx .plugin-shot-missing strong {
+            font-size: 16px;
+        }
+
+        #gennx .plugin-shot-missing span {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        #gennx .plugin-shot-missing .plugin-shot-path {
+            font-size: 12.5px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            color: var(--color-text-secondary);
+            opacity: 0.9;
+        }
+
         @media (max-width: 900px) {
             #gennx .flow-row,
             #gennx .compare-grid,
@@ -2943,110 +2997,20 @@
                     </div>
                 </div>
 
-                <div class="technical-box">
-                    <h2>기억해 둘 점</h2>
-                    <p><strong>Save</strong>는 After ID·Name을 받은 뒤 왼쪽 Update List에 넣습니다. gen 모델은 그 목록의 <strong>Change</strong>로 반영합니다.</p>
-                    <p>플러그인을 닫으면 Update List는 사라집니다. 반영 전에 필요한 설계를 모두 Save해 두세요.</p>
-                </div>
             </section>
 
             <section class="plugin-block" aria-labelledby="gennx-ui-title">
                 <h2 id="gennx-ui-title" class="section-headline">화면은 세 칸으로<br>나뉩니다.</h2>
                 <p class="section-subhead">왼쪽 Update List, 가운데 Design, 오른쪽 Preview. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
 
-                <div class="ui-shell" aria-label="BestoDesigner 화면 구성 목업">
-                    <div class="ui-titlebar">
-                        BestoDesigner — MIDAS gen NX
-                        <span>목업 · 실제 UI 스크린샷 대체</span>
+                <figure class="plugin-shot-slot" aria-label="BestoDesigner 세 칸 화면 스크린샷 자리">
+                    <div class="plugin-shot-missing">
+                        <strong>실제 앱 스크린샷 필요</strong>
+                        <span>메인 창 전체 — Update List / Design / Preview</span>
+                        <span class="plugin-shot-path">예: assets/images/plugin/main-three-pane.webp</span>
                     </div>
-                    <div class="ui-panes">
-                        <aside class="ui-pane">
-                            <div class="ui-pane-head">Update List</div>
-                            <div class="ui-pane-body">
-                                <table class="ui-table">
-                                    <thead>
-                                        <tr>
-                                            <th>SEL</th>
-                                            <th>Before</th>
-                                            <th>After</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="is-selected">
-                                            <td>●</td>
-                                            <td>ID 12 · H400…</td>
-                                            <td>ID 48 · HU500…</td>
-                                        </tr>
-                                        <tr>
-                                            <td>○</td>
-                                            <td>ID 15 · H350…</td>
-                                            <td>ID 49 · HU450…</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="ui-note">Name은 한 줄로 잘리고, 칸에 마우스를 올리면 전체 이름이 보입니다.</p>
-                                <div class="ui-btn-row">
-                                    <button type="button" class="ui-btn">PDF 저장</button>
-                                    <button type="button" class="ui-btn">Delete</button>
-                                    <button type="button" class="ui-btn is-accent">Change</button>
-                                </div>
-                            </div>
-                        </aside>
-
-                        <section class="ui-pane">
-                            <div class="ui-pane-head">Design</div>
-                            <div class="ui-pane-body">
-                                <div class="ui-tabs">
-                                    <div class="ui-tab is-active">Section</div>
-                                    <div class="ui-tab">Member</div>
-                                </div>
-                                <div class="ui-field">
-                                    <strong>Additional Informations</strong>
-                                    철근 · 전단연결재 · 보 높이 · 재료 · 슬래브 · 지지 · 단부 조건
-                                </div>
-                                <button type="button" class="ui-btn is-primary" style="align-self:flex-start;">Search Satisfied Section</button>
-                                <table class="ui-table">
-                                    <thead>
-                                        <tr>
-                                            <th>SEL</th>
-                                            <th>Section List</th>
-                                            <th>결과</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="is-selected">
-                                            <td>●</td>
-                                            <td>HU-500×200</td>
-                                            <td>OK</td>
-                                        </tr>
-                                        <tr>
-                                            <td>○</td>
-                                            <td>HU-450×200</td>
-                                            <td>OK</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="ui-btn-row">
-                                    <button type="button" class="ui-btn">Detail…</button>
-                                    <button type="button" class="ui-btn">Design…</button>
-                                    <button type="button" class="ui-btn is-primary">Save</button>
-                                    <button type="button" class="ui-btn">Close</button>
-                                </div>
-                            </div>
-                        </section>
-
-                        <aside class="ui-pane">
-                            <div class="ui-pane-head">Preview</div>
-                            <div class="ui-pane-body">
-                                <div class="ui-preview-title">HU-500×200</div>
-                                <div class="ui-preview-box">
-                                    선택한 Section List 행의<br>단면 이름 · 검토 요약
-                                </div>
-                                <p class="ui-note">Section List에서 SEL을 바꾸면 Preview가 그 행을 따릅니다.</p>
-                            </div>
-                        </aside>
-                    </div>
-                </div>
+                    <figcaption>Update List · Design · Preview 세 칸 구성</figcaption>
+                </figure>
 
                 <div class="technical-box">
                     <h2>Update List vs Section List</h2>
@@ -3142,40 +3106,22 @@
                 <p class="section-subhead">검토서를 보거나, H·U 치수를 바꿔 다시 계산할 때 사용합니다.</p>
 
                 <div class="dialog-grid">
-                    <div class="dialog-mock">
-                        <div class="dialog-head">Detail… — 검토서</div>
-                        <div class="dialog-body">
-                            <p>고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 검토 항목을 보여 줍니다.</p>
-                            <div class="dialog-chips">
-                                <span class="dialog-chip">휨</span>
-                                <span class="dialog-chip">전단</span>
-                                <span class="dialog-chip">처짐</span>
-                                <span class="dialog-chip">진동</span>
-                            </div>
+                    <figure class="plugin-shot-slot">
+                        <div class="plugin-shot-missing">
+                            <strong>실제 앱 스크린샷 필요</strong>
+                            <span>Detail… 검토서 대화상자</span>
+                            <span class="plugin-shot-path">예: assets/images/plugin/dialog-detail.webp</span>
                         </div>
-                        <div class="dialog-foot">
-                            <button type="button" class="ui-btn">닫기</button>
+                        <figcaption>Detail… — 시공·합성 단계 휨·전단·처짐·진동 검토서</figcaption>
+                    </figure>
+                    <figure class="plugin-shot-slot">
+                        <div class="plugin-shot-missing">
+                            <strong>실제 앱 스크린샷 필요</strong>
+                            <span>Design… 치수 수정 대화상자</span>
+                            <span class="plugin-shot-path">예: assets/images/plugin/dialog-design.webp</span>
                         </div>
-                    </div>
-                    <div class="dialog-mock">
-                        <div class="dialog-head">Design… — 치수 수정</div>
-                        <div class="dialog-body">
-                            <p>고른 행의 H·U 치수를 바꾸는 창입니다.</p>
-                            <div class="dialog-chips">
-                                <span class="dialog-chip">Done → 그 행만 재계산</span>
-                                <span class="dialog-chip">Detail → 바꾼 치수 검토서</span>
-                            </div>
-                        </div>
-                        <div class="dialog-foot">
-                            <button type="button" class="ui-btn">Detail</button>
-                            <button type="button" class="ui-btn is-primary">Done</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="technical-box">
-                    <h2>목업 안내</h2>
-                    <p>이 탭은 사이트용 소개·사용법 목업입니다. 실제 플러그인 스크린샷·영문 UI 라벨·다운로드 링크는 이후 단계에서 교체할 수 있습니다.</p>
+                        <figcaption>Design… — H·U 치수 변경, Done 재계산 / Detail 검토서</figcaption>
+                    </figure>
                 </div>
             </section>
         </div>
