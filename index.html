@@ -1430,6 +1430,459 @@
                 padding: 18px;
             }
         }
+
+        /* [GEN NX / BestoDesigner tab mockup] */
+        #gennx .brand-kicker {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        #gennx .flow-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: var(--spacing-element);
+        }
+
+        #gennx .flow-step {
+            padding: 24px 22px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+        }
+
+        #gennx .flow-step .flow-num {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        #gennx .flow-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        #gennx .flow-step p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        #gennx .ui-shell {
+            margin-top: var(--spacing-element);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #1a1d22;
+            box-shadow: var(--shadow-product);
+        }
+
+        #gennx .ui-titlebar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 14px;
+            background: #111418;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        #gennx .ui-titlebar span {
+            opacity: 0.55;
+            font-weight: 500;
+        }
+
+        #gennx .ui-panes {
+            display: grid;
+            grid-template-columns: 0.9fr 1.35fr 0.95fr;
+            min-height: 360px;
+            background: #e8edf3;
+        }
+
+        #gennx .ui-pane {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(23, 32, 42, 0.12);
+            background: #f7f9fc;
+            min-height: 0;
+        }
+
+        #gennx .ui-pane:last-child {
+            border-right: none;
+        }
+
+        #gennx .ui-pane-head {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--color-border);
+            background: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+        }
+
+        #gennx .ui-pane-body {
+            padding: 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #gennx .ui-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11.5px;
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        #gennx .ui-table th,
+        #gennx .ui-table td {
+            padding: 7px 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(219, 228, 238, 0.9);
+            white-space: nowrap;
+        }
+
+        #gennx .ui-table th {
+            background: var(--color-surface-muted);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        #gennx .ui-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        #gennx .ui-table tbody tr.is-selected td {
+            background: rgba(15, 99, 168, 0.08);
+        }
+
+        #gennx .ui-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        #gennx .ui-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            background: #fff;
+            color: var(--color-text-dark);
+            font-size: 11.5px;
+            font-weight: 600;
+            font-family: inherit;
+        }
+
+        #gennx .ui-btn.is-primary {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #fff;
+        }
+
+        #gennx .ui-btn.is-accent {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #fff;
+        }
+
+        #gennx .ui-tabs {
+            display: flex;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        #gennx .ui-tab {
+            flex: 1;
+            padding: 7px 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            border-right: 1px solid var(--color-border);
+            background: var(--color-surface-muted);
+        }
+
+        #gennx .ui-tab:last-child {
+            border-right: none;
+        }
+
+        #gennx .ui-tab.is-active {
+            background: #fff;
+            color: var(--color-primary-dark);
+        }
+
+        #gennx .ui-field {
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .ui-field strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: var(--color-text-dark);
+        }
+
+        #gennx .ui-preview-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        #gennx .ui-preview-box {
+            flex: 1;
+            min-height: 140px;
+            border: 1px dashed rgba(15, 99, 168, 0.35);
+            border-radius: 10px;
+            background:
+                linear-gradient(135deg, rgba(15, 99, 168, 0.06), rgba(27, 154, 170, 0.08)),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 8px,
+                    rgba(15, 99, 168, 0.04) 8px,
+                    rgba(15, 99, 168, 0.04) 9px
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 16px;
+            color: var(--color-primary-dark);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        #gennx .ui-note {
+            margin: 0;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .step-list {
+            margin-top: var(--spacing-element);
+            display: grid;
+            gap: 14px;
+        }
+
+        #gennx .step-item {
+            display: grid;
+            grid-template-columns: 52px 1fr;
+            gap: 16px;
+            align-items: start;
+            padding: 20px 22px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+        }
+
+        #gennx .step-num {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(15, 99, 168, 0.1);
+            color: var(--color-primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        #gennx .step-item h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        #gennx .step-item p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .compare-grid,
+        #gennx .dialog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: var(--spacing-element);
+        }
+
+        #gennx .compare-pane {
+            padding: 26px 24px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+        }
+
+        #gennx .compare-pane h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-primary-dark);
+        }
+
+        #gennx .compare-pane p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 10px;
+        }
+
+        #gennx .compare-pane ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        #gennx .compare-pane li {
+            position: relative;
+            padding: 10px 12px 10px 28px;
+            background: var(--color-surface-muted);
+            border-radius: 10px;
+            font-size: 14px;
+            color: #2e3a46;
+        }
+
+        #gennx .compare-pane li::before {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 12px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--color-primary);
+        }
+
+        #gennx .dialog-mock {
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--shadow-card);
+        }
+
+        #gennx .dialog-head {
+            padding: 12px 16px;
+            background: var(--color-surface-tile-1);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #gennx .dialog-body {
+            padding: 18px 16px;
+            min-height: 160px;
+        }
+
+        #gennx .dialog-body p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        #gennx .dialog-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        #gennx .dialog-chip {
+            padding: 7px 11px;
+            border-radius: 8px;
+            background: var(--color-surface-muted);
+            border: 1px solid var(--color-border);
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        #gennx .dialog-foot {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 12px 16px;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-canvas-parchment);
+        }
+
+        #gennx .plugin-block {
+            margin-top: 64px;
+        }
+
+        #gennx .plugin-block:first-of-type {
+            margin-top: 0;
+        }
+
+        @media (max-width: 900px) {
+            #gennx .flow-row,
+            #gennx .compare-grid,
+            #gennx .dialog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #gennx .ui-panes {
+                grid-template-columns: 1fr;
+                min-height: 0;
+            }
+
+            #gennx .ui-pane {
+                border-right: none;
+                border-bottom: 1px solid rgba(23, 32, 42, 0.12);
+                min-height: 220px;
+            }
+
+            #gennx .ui-pane:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 720px) {
+            #gennx .step-item {
+                grid-template-columns: 40px 1fr;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            #gennx .step-num {
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+                border-radius: 12px;
+            }
+
+            #gennx .plugin-block {
+                margin-top: 48px;
+            }
+        }
     </style>
 </head>
 
@@ -1442,7 +1895,7 @@
             <div class="left-button">
                 <a id="btn-design-text" href="https://besto-dev.agreeabletree-f610a989.koreacentral.azurecontainerapps.io/" target="_blank"
                     class="btn-design">BESTOBEAM 설계</a>
-                <a id="btn-gennx-text" href="gennx-plugin.html" class="btn-design">마이다스 GEN NX 플러그인</a>
+                <a id="btn-gennx-text" href="#gennx" class="btn-design" onclick="showTab(null, 'gennx'); return false;">마이다스 GEN NX 플러그인</a>
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
@@ -1482,6 +1935,7 @@
                 <button id="nav-height" class="tab-link" onclick="showTab(event, 'height')">층고 및 효율</button>
                 <button id="nav-vibration" class="tab-link" onclick="showTab(event, 'vibration')">진동 성능</button>
                 <button id="nav-reference" class="tab-link" onclick="showTab(event, 'reference')">주요 실적</button>
+                <button id="nav-gennx" class="tab-link" onclick="showTab(event, 'gennx')">GEN NX 플러그인</button>
                 <span class="tab-divider" aria-hidden="true"></span>
                 <a id="btn-np-text" href="npcolumn.html" class="product-link">NP Column</a>
                 <a id="btn-pc-text" href="hollowpc.html" class="product-link">중공PC기둥</a>
@@ -2463,6 +2917,270 @@
         </div>
     </main>
 
+    <!-- [9. 마이다스 GEN NX 플러그인 / BestoDesigner] -->
+    <main id="gennx" class="page-content">
+        <div class="container">
+            <section class="plugin-block" aria-labelledby="gennx-title">
+                <p class="brand-kicker">BestoDesigner</p>
+                <h1 id="gennx-title" class="section-headline">마이다스 GEN NX 플러그인</h1>
+                <p class="section-subhead">MIDAS gen 안에서 합성 H+U 보 단면을 찾고, 검토한 뒤, 모델에 반영합니다.</p>
+
+                <div class="flow-row">
+                    <div class="flow-step">
+                        <div class="flow-num">01 · SEARCH</div>
+                        <h3>단면 검색</h3>
+                        <p>gen의 단면·부재·하중을 읽고, <strong>Search Satisfied Section</strong>으로 조건을 만족하는 단면을 찾습니다.</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-num">02 · REVIEW</div>
+                        <h3>검토</h3>
+                        <p>계산은 파이썬 서버가 수행하고, 화면에서 결과·Preview·Detail로 검토합니다.</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-num">03 · APPLY</div>
+                        <h3>모델 반영</h3>
+                        <p><strong>Save</strong>로 Update List에 쌓고, <strong>Change</strong>로 gen 모델에 반영합니다.</p>
+                    </div>
+                </div>
+
+                <div class="technical-box">
+                    <h2>기억해 둘 점</h2>
+                    <p><strong>Save</strong>는 After ID·Name을 받은 뒤 왼쪽 Update List에 넣습니다. gen 모델은 그 목록의 <strong>Change</strong>로 반영합니다.</p>
+                    <p>플러그인을 닫으면 Update List는 사라집니다. 반영 전에 필요한 설계를 모두 Save해 두세요.</p>
+                </div>
+            </section>
+
+            <section class="plugin-block" aria-labelledby="gennx-ui-title">
+                <h2 id="gennx-ui-title" class="section-headline">화면은 세 칸으로<br>나뉩니다.</h2>
+                <p class="section-subhead">왼쪽 Update List, 가운데 Design, 오른쪽 Preview. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
+
+                <div class="ui-shell" aria-label="BestoDesigner 화면 구성 목업">
+                    <div class="ui-titlebar">
+                        BestoDesigner — MIDAS gen NX
+                        <span>목업 · 실제 UI 스크린샷 대체</span>
+                    </div>
+                    <div class="ui-panes">
+                        <aside class="ui-pane">
+                            <div class="ui-pane-head">Update List</div>
+                            <div class="ui-pane-body">
+                                <table class="ui-table">
+                                    <thead>
+                                        <tr>
+                                            <th>SEL</th>
+                                            <th>Before</th>
+                                            <th>After</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="is-selected">
+                                            <td>●</td>
+                                            <td>ID 12 · H400…</td>
+                                            <td>ID 48 · HU500…</td>
+                                        </tr>
+                                        <tr>
+                                            <td>○</td>
+                                            <td>ID 15 · H350…</td>
+                                            <td>ID 49 · HU450…</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="ui-note">Name은 한 줄로 잘리고, 칸에 마우스를 올리면 전체 이름이 보입니다.</p>
+                                <div class="ui-btn-row">
+                                    <button type="button" class="ui-btn">PDF 저장</button>
+                                    <button type="button" class="ui-btn">Delete</button>
+                                    <button type="button" class="ui-btn is-accent">Change</button>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <section class="ui-pane">
+                            <div class="ui-pane-head">Design</div>
+                            <div class="ui-pane-body">
+                                <div class="ui-tabs">
+                                    <div class="ui-tab is-active">Section</div>
+                                    <div class="ui-tab">Member</div>
+                                </div>
+                                <div class="ui-field">
+                                    <strong>Additional Informations</strong>
+                                    철근 · 전단연결재 · 보 높이 · 재료 · 슬래브 · 지지 · 단부 조건
+                                </div>
+                                <button type="button" class="ui-btn is-primary" style="align-self:flex-start;">Search Satisfied Section</button>
+                                <table class="ui-table">
+                                    <thead>
+                                        <tr>
+                                            <th>SEL</th>
+                                            <th>Section List</th>
+                                            <th>결과</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="is-selected">
+                                            <td>●</td>
+                                            <td>HU-500×200</td>
+                                            <td>OK</td>
+                                        </tr>
+                                        <tr>
+                                            <td>○</td>
+                                            <td>HU-450×200</td>
+                                            <td>OK</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="ui-btn-row">
+                                    <button type="button" class="ui-btn">Detail…</button>
+                                    <button type="button" class="ui-btn">Design…</button>
+                                    <button type="button" class="ui-btn is-primary">Save</button>
+                                    <button type="button" class="ui-btn">Close</button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <aside class="ui-pane">
+                            <div class="ui-pane-head">Preview</div>
+                            <div class="ui-pane-body">
+                                <div class="ui-preview-title">HU-500×200</div>
+                                <div class="ui-preview-box">
+                                    선택한 Section List 행의<br>단면 이름 · 검토 요약
+                                </div>
+                                <p class="ui-note">Section List에서 SEL을 바꾸면 Preview가 그 행을 따릅니다.</p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="technical-box">
+                    <h2>Update List vs Section List</h2>
+                    <p><strong>Section List</strong>는 이번 검색 결과입니다. <strong>Update List</strong>는 Save로 쌓아 둔 설계입니다. Change는 Update List 전체를 gen에 반영합니다.</p>
+                </div>
+            </section>
+
+            <section class="plugin-block" aria-labelledby="gennx-steps-title">
+                <h2 id="gennx-steps-title" class="section-headline">검색부터 Change까지,<br>한 흐름으로.</h2>
+                <p class="section-subhead">단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다.</p>
+
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h3>대상 고르기</h3>
+                            <p>Section 탭에서는 드롭다운으로 모델의 단면을 고릅니다. Member 탭에서는 gen에서 부재를 고른 뒤 <strong>Refresh</strong>를 누릅니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h3>Additional Informations 확인</h3>
+                            <p>철근, 전단연결재, 보 높이, 재료, 슬래브, 지지, 단부 조건을 확인합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h3>Search Satisfied Section</h3>
+                            <p>조건을 만족하는 단면을 검색합니다. 조건을 바꾼 뒤에는 다시 검색합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div>
+                            <h3>Section List에서 선택</h3>
+                            <p>행의 SEL로 단면을 고릅니다. Preview가 그 행을 따릅니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">5</div>
+                        <div>
+                            <h3>Detail / Design (선택)</h3>
+                            <p>필요하면 <strong>Detail…</strong>로 검토서를 보고, <strong>Design…</strong>에서 치수를 바꾼 뒤 <strong>Done</strong>으로 그 행만 다시 계산합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">6</div>
+                        <div>
+                            <h3>Save → Update List</h3>
+                            <p>After ID·Name을 확인하면 Update List에 행이 쌓입니다. 같은 Before ID가 있으면 그 행이 새 설계로 바뀝니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">7</div>
+                        <div>
+                            <h3>Change → gen 반영</h3>
+                            <p>목록 전체를 순서대로 gen에 반영합니다. 반영된 행은 목록에서 빠집니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="plugin-block" aria-labelledby="gennx-tabs-title">
+                <h2 id="gennx-tabs-title" class="section-headline">Section 탭과<br>Member 탭의 차이</h2>
+                <p class="section-subhead">탭을 바꾸거나 단면을 다시 고르면 검색 결과만 비워지고, Update List는 남습니다.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-pane">
+                        <h3>Section 탭</h3>
+                        <p>단면 하나를 대상으로 합니다. Before / After가 한 행입니다.</p>
+                        <ul>
+                            <li>Save 창의 After ID·Name에 그 단면이 들어 있습니다.</li>
+                            <li>Change는 그 After ID의 단면 정의를 바꿉니다.</li>
+                            <li>그 ID를 쓰는 부재에 자중을 넣습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="compare-pane">
+                        <h3>Member 탭</h3>
+                        <p>고른 부재를 씁니다. 단면이 여러 종류면 하중은 그중 최대값입니다.</p>
+                        <ul>
+                            <li>Before 단면마다 행이 생기고, After는 고른 합성단면 하나입니다.</li>
+                            <li>Save 창의 After ID·Name은 비어 있습니다.</li>
+                            <li>Change는 Save 당시 고른 부재의 단면을 After로 바꾸고 자중을 넣습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="plugin-block" aria-labelledby="gennx-dialogs-title">
+                <h2 id="gennx-dialogs-title" class="section-headline">Detail과 Design<br>대화상자</h2>
+                <p class="section-subhead">검토서를 보거나, H·U 치수를 바꿔 다시 계산할 때 사용합니다.</p>
+
+                <div class="dialog-grid">
+                    <div class="dialog-mock">
+                        <div class="dialog-head">Detail… — 검토서</div>
+                        <div class="dialog-body">
+                            <p>고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 검토 항목을 보여 줍니다.</p>
+                            <div class="dialog-chips">
+                                <span class="dialog-chip">휨</span>
+                                <span class="dialog-chip">전단</span>
+                                <span class="dialog-chip">처짐</span>
+                                <span class="dialog-chip">진동</span>
+                            </div>
+                        </div>
+                        <div class="dialog-foot">
+                            <button type="button" class="ui-btn">닫기</button>
+                        </div>
+                    </div>
+                    <div class="dialog-mock">
+                        <div class="dialog-head">Design… — 치수 수정</div>
+                        <div class="dialog-body">
+                            <p>고른 행의 H·U 치수를 바꾸는 창입니다.</p>
+                            <div class="dialog-chips">
+                                <span class="dialog-chip">Done → 그 행만 재계산</span>
+                                <span class="dialog-chip">Detail → 바꾼 치수 검토서</span>
+                            </div>
+                        </div>
+                        <div class="dialog-foot">
+                            <button type="button" class="ui-btn">Detail</button>
+                            <button type="button" class="ui-btn is-primary">Done</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technical-box">
+                    <h2>목업 안내</h2>
+                    <p>이 탭은 사이트용 소개·사용법 목업입니다. 실제 플러그인 스크린샷·영문 UI 라벨·다운로드 링크는 이후 단계에서 교체할 수 있습니다.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-contact">
@@ -2518,6 +3236,7 @@
                 'nav-height': '층고 및 효율',
                 'nav-vibration': '진동 성능',
                 'nav-reference': '주요 실적',
+                'nav-gennx': 'GEN NX 플러그인',
                 'btn-design-text': 'BESTOBEAM 설계',
                 'btn-gennx-text': '마이다스 GEN NX 플러그인',
                 'btn-video-text': '홍보영상',
@@ -2763,6 +3482,7 @@
                 'nav-height': 'Floor Height',
                 'nav-vibration': 'Vibration',
                 'nav-reference': 'References',
+                'nav-gennx': 'GEN NX Plugin',
                 'btn-design-text': 'BESTOBEAM Design',
                 'btn-gennx-text': 'MIDAS GEN NX Plugin',
                 'btn-video-text': 'Promotion Video',
@@ -3002,6 +3722,7 @@
                 'nav-height': '层高与效率',
                 'nav-vibration': '振动性能',
                 'nav-reference': '主要业绩',
+                'nav-gennx': 'GEN NX 插件',
                 'btn-design-text': 'BESTOBEAM 设计',
                 'btn-gennx-text': 'MIDAS GEN NX 插件',
                 'btn-video-text': '宣传视频',
@@ -3242,6 +3963,7 @@
                 'nav-height': 'Chiều cao tầng',
                 'nav-vibration': 'Chống rung',
                 'nav-reference': 'Dự án',
+                'nav-gennx': 'Plugin GEN NX',
                 'btn-design-text': 'Thiết kế BESTOBEAM',
                 'btn-gennx-text': 'Plugin MIDAS GEN NX',
                 'btn-video-text': 'Video quảng bá',
@@ -3475,7 +4197,7 @@
         };
 
         const TAB_IDS = ['overview', 'principle', 'test', 'certification', 'process',
-            'economy', 'height', 'vibration', 'reference'];
+            'economy', 'height', 'vibration', 'reference', 'gennx'];
         const LANG_KEY = 'bestobeam.lang';
         const DRB_VIDEO_ID = 'm-Iyd3YwtmA';
 
