@@ -1863,6 +1863,20 @@
             color: var(--color-text-secondary);
         }
 
+        #gennx .plugin-shot-slot--dialog {
+            max-width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #gennx .dialog-grid .plugin-shot-slot--dialog img {
+            margin: 0 auto;
+            width: auto;
+            max-width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+        }
+
         #gennx .plugin-shot-missing {
             display: flex;
             flex-direction: column;
@@ -3003,12 +3017,10 @@
                 <h2 id="gennx-ui-title" class="section-headline">화면은 세 칸으로<br>나뉩니다.</h2>
                 <p class="section-subhead">왼쪽 Update List, 가운데 Design, 오른쪽 Preview. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
 
-                <figure class="plugin-shot-slot" aria-label="BestoDesigner 세 칸 화면 스크린샷 자리">
-                    <div class="plugin-shot-missing">
-                        <strong>실제 앱 스크린샷 필요</strong>
-                        <span>메인 창 전체 — Update List / Design / Preview</span>
-                        <span class="plugin-shot-path">예: assets/images/plugin/main-three-pane.webp</span>
-                    </div>
+                <figure class="plugin-shot-slot" aria-label="BestoDesigner 세 칸 화면">
+                    <img loading="lazy" width="1640" height="789" decoding="async"
+                        src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
+                        alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸">
                     <figcaption>Update List · Design · Preview 세 칸 구성</figcaption>
                 </figure>
 
@@ -3106,20 +3118,16 @@
                 <p class="section-subhead">검토서를 보거나, H·U 치수를 바꿔 다시 계산할 때 사용합니다.</p>
 
                 <div class="dialog-grid">
-                    <figure class="plugin-shot-slot">
-                        <div class="plugin-shot-missing">
-                            <strong>실제 앱 스크린샷 필요</strong>
-                            <span>Detail… 검토서 대화상자</span>
-                            <span class="plugin-shot-path">예: assets/images/plugin/dialog-detail.webp</span>
-                        </div>
+                    <figure class="plugin-shot-slot plugin-shot-slot--dialog">
+                        <img loading="lazy" width="601" height="681" decoding="async"
+                            src="assets/images/plugin/detail.jpg"
+                            alt="BestoDesigner Detail 대화상자 — H+U 검토서">
                         <figcaption>Detail… — 시공·합성 단계 휨·전단·처짐·진동 검토서</figcaption>
                     </figure>
-                    <figure class="plugin-shot-slot">
-                        <div class="plugin-shot-missing">
-                            <strong>실제 앱 스크린샷 필요</strong>
-                            <span>Design… 치수 수정 대화상자</span>
-                            <span class="plugin-shot-path">예: assets/images/plugin/dialog-design.webp</span>
-                        </div>
+                    <figure class="plugin-shot-slot plugin-shot-slot--dialog">
+                        <img loading="lazy" width="308" height="487" decoding="async"
+                            src="assets/images/plugin/design.jpg"
+                            alt="BestoDesigner Design 대화상자 — H·U 치수 수정">
                         <figcaption>Design… — H·U 치수 변경, Done 재계산 / Detail 검토서</figcaption>
                     </figure>
                 </div>
