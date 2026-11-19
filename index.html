@@ -1430,6 +1430,44 @@
                 padding: 18px;
             }
         }
+
+        /* [GEN NX / BestoDesigner — align with sibling tabs] */
+        #gennx .process-flow {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        #gennx .process-flow .flow-step::after {
+            display: none;
+        }
+
+        #gennx .plugin-image-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: var(--spacing-element);
+            max-width: var(--fig-full);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #gennx .plugin-image-pair .product-image-container {
+            margin-top: 0;
+            max-width: none;
+        }
+
+        #gennx .plugin-image-pair figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            #gennx .plugin-image-pair {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
@@ -1442,7 +1480,7 @@
             <div class="left-button">
                 <a id="btn-design-text" href="https://besto-dev.agreeabletree-f610a989.koreacentral.azurecontainerapps.io/" target="_blank"
                     class="btn-design">BESTOBEAM 설계</a>
-                <a id="btn-gennx-text" href="#" class="btn-design">마이다스 GEN NX 플러그인</a>
+                <a id="btn-gennx-text" href="assets/BestoDesigner-MidasGenNX-Plugin.zip" class="btn-design" download="BestoDesigner-MidasGenNX-Plugin.zip">마이다스 GEN NX 플러그인</a>
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
@@ -1475,6 +1513,7 @@
             <div id="sectionMenu" class="tab-container">
                 <button id="nav-overview" class="tab-link active" onclick="showTab(event, 'overview')">제품 개요</button>
                 <button id="nav-principle" class="tab-link" onclick="showTab(event, 'principle')">구조 설계 원리</button>
+                <button id="nav-gennx" class="tab-link" onclick="showTab(event, 'gennx')">플러그인 소개</button>
                 <button id="nav-test" class="tab-link" onclick="showTab(event, 'test')">실험 및 성능</button>
                 <button id="nav-certification" class="tab-link" onclick="showTab(event, 'certification')">기술인증</button>
                 <button id="nav-process" class="tab-link" onclick="showTab(event, 'process')">시공 프로세스</button>
@@ -1614,6 +1653,103 @@
             </div>
             <div class="product-image-container" style="margin-top: 30px;">
                 <img loading="lazy" width="2000" height="1092" decoding="async" src="assets/images/2-2.webp" alt="구조 설계 프로세스 및 단면 최적화 상세" class="product-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- [플러그인 소개 — BestoDesigner / MIDAS GEN NX] -->
+    <main id="gennx" class="page-content">
+        <div class="container">
+            <h1 id="gennx-title" class="section-headline">마이다스 GEN NX 플러그인: <br>합성 H+U 단면 검색과 반영.</h1>
+            <p id="gennx-subhead" class="section-subhead">BestoDesigner. MIDAS gen 안에서 단면을 찾고, 검토한 뒤, 모델에 반영합니다.</p>
+
+            <div class="technical-box">
+                <h2>플러그인이 하는 일</h2>
+                <p>gen의 단면·부재·하중을 읽어 옵니다. 계산은 파이썬 서버가 수행하고, 화면에서 결과를 검토합니다. 최적 단면은 <strong>Search Satisfied Section</strong>으로 검색합니다.</p>
+                <ul>
+                    <li><strong>Search:</strong> 조건을 만족하는 합성 H+U 단면을 찾습니다.</li>
+                    <li><strong>Review:</strong> Preview·Detail로 검토 결과를 확인합니다.</li>
+                    <li><strong>Apply:</strong> Save로 Update List에 쌓고, Change로 gen 모델에 반영합니다.</li>
+                </ul>
+            </div>
+
+            <div class="technical-box">
+                <h2>화면은 세 칸으로 나뉩니다</h2>
+                <p>왼쪽 <strong>Update List</strong>, 가운데 <strong>Design</strong>, 오른쪽 <strong>Preview</strong>입니다. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
+                <ul>
+                    <li><strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). 하단은 PDF 저장, Delete, Change.</li>
+                    <li><strong>Design:</strong> Section / Member 탭, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.</li>
+                    <li><strong>Preview:</strong> Section List에서 고른 단면의 이름과 검토 요약.</li>
+                </ul>
+            </div>
+            <div class="product-image-container">
+                <img loading="lazy" width="1640" height="789" decoding="async"
+                    src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
+                    alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸" class="product-image">
+            </div>
+
+            <div class="technical-box" style="margin-top: 50px;">
+                <h2>검색부터 Change까지</h2>
+                <p>단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다.</p>
+                <div class="process-flow">
+                    <div class="flow-step">
+                        <span class="step-number">01</span>
+                        <p>대상 고르기 — Section 드롭다운 또는 Member에서 Refresh</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">02</span>
+                        <p>Additional Informations 확인 (철근·전단연결재·높이·재료 등)</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">03</span>
+                        <p>Search Satisfied Section으로 조건 만족 단면 검색</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">04</span>
+                        <p>Section List에서 SEL로 선택 — Preview가 따름</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">05</span>
+                        <p>필요 시 Detail… / Design… 후 Done으로 해당 행 재계산</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">06</span>
+                        <p>Save로 After ID·Name 확인 → Update List 적재</p>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-number">07</span>
+                        <p>Change로 목록 전체를 gen에 반영 (반영 행은 목록에서 제거)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technical-box" style="margin-top: 50px;">
+                <h2>Section 탭과 Member 탭</h2>
+                <p>탭을 바꾸거나 단면을 다시 고르면 검색 결과만 비워지고, Update List는 남습니다.</p>
+                <ul>
+                    <li><strong>Section 탭:</strong> 단면 하나. Before/After 한 행. Save에 After ID·Name이 들어 있고, Change는 그 After ID의 단면 정의를 바꾸며 해당 ID 부재에 자중을 넣습니다.</li>
+                    <li><strong>Member 탭:</strong> 고른 부재 기준. 단면이 여러 종류면 하중은 최대값. Before 단면마다 행이 생기고 After는 합성단면 하나. Save의 After ID·Name은 비어 있고, Change는 Save 당시 부재 단면을 After로 바꿉니다.</li>
+                </ul>
+            </div>
+
+            <div class="technical-box" style="margin-top: 50px;">
+                <h2>Detail과 Design</h2>
+                <p><strong>Detail…</strong>은 고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 휨·전단·처짐·진동을 보여 줍니다.</p>
+                <p><strong>Design…</strong>은 고른 행의 H·U 치수를 바꾸는 창입니다. Done은 그 행만 다시 계산하고, 창의 Detail은 바꾼 치수의 검토서를 엽니다.</p>
+            </div>
+            <div class="plugin-image-pair">
+                <div class="product-image-container">
+                    <img loading="lazy" width="601" height="681" decoding="async"
+                        src="assets/images/plugin/detail.jpg"
+                        alt="BestoDesigner Detail 대화상자 — H+U 검토서" class="product-image">
+                    <figcaption>Detail… — 검토서</figcaption>
+                </div>
+                <div class="product-image-container">
+                    <img loading="lazy" width="308" height="487" decoding="async"
+                        src="assets/images/plugin/design.jpg"
+                        alt="BestoDesigner Design 대화상자 — H·U 치수 수정" class="product-image">
+                    <figcaption>Design… — 치수 수정</figcaption>
+                </div>
             </div>
         </div>
     </main>
@@ -2518,6 +2654,7 @@
                 'nav-height': '층고 및 효율',
                 'nav-vibration': '진동 성능',
                 'nav-reference': '주요 실적',
+                'nav-gennx': '플러그인 소개',
                 'btn-design-text': 'BESTOBEAM 설계',
                 'btn-gennx-text': '마이다스 GEN NX 플러그인',
                 'btn-video-text': '홍보영상',
@@ -2763,6 +2900,7 @@
                 'nav-height': 'Floor Height',
                 'nav-vibration': 'Vibration',
                 'nav-reference': 'References',
+                'nav-gennx': 'Plugin Intro',
                 'btn-design-text': 'BESTOBEAM Design',
                 'btn-gennx-text': 'MIDAS GEN NX Plugin',
                 'btn-video-text': 'Promotion Video',
@@ -3002,6 +3140,7 @@
                 'nav-height': '层高与效率',
                 'nav-vibration': '振动性能',
                 'nav-reference': '主要业绩',
+                'nav-gennx': '插件介绍',
                 'btn-design-text': 'BESTOBEAM 设计',
                 'btn-gennx-text': 'MIDAS GEN NX 插件',
                 'btn-video-text': '宣传视频',
@@ -3242,6 +3381,7 @@
                 'nav-height': 'Chiều cao tầng',
                 'nav-vibration': 'Chống rung',
                 'nav-reference': 'Dự án',
+                'nav-gennx': 'Giới thiệu plugin',
                 'btn-design-text': 'Thiết kế BESTOBEAM',
                 'btn-gennx-text': 'Plugin MIDAS GEN NX',
                 'btn-video-text': 'Video quảng bá',
@@ -3474,7 +3614,7 @@
             }
         };
 
-        const TAB_IDS = ['overview', 'principle', 'test', 'certification', 'process',
+        const TAB_IDS = ['overview', 'principle', 'gennx', 'test', 'certification', 'process',
             'economy', 'height', 'vibration', 'reference'];
         const LANG_KEY = 'bestobeam.lang';
         const DRB_VIDEO_ID = 'm-Iyd3YwtmA';
