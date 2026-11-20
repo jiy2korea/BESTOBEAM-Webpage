@@ -1440,19 +1440,40 @@
             display: none;
         }
 
+        /* 세화면 스크린샷: technical-box와 같은 본문 칼럼 폭(100%) */
+        #gennx > .container > .product-image-container {
+            max-width: none;
+            width: 100%;
+        }
+
+        #gennx > .container > .product-image-container .product-image {
+            width: 100%;
+        }
+
+        /* Detail/Design 팝업: 고유(자연) 크기 — width:100%로 늘리지 않음 */
         #gennx .plugin-image-pair {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
             gap: 20px;
             margin-top: var(--spacing-element);
-            max-width: var(--fig-full);
+            width: 100%;
+            max-width: none;
             margin-left: auto;
             margin-right: auto;
         }
 
         #gennx .plugin-image-pair .product-image-container {
             margin-top: 0;
+            width: auto;
             max-width: none;
+        }
+
+        #gennx .plugin-image-pair .product-image {
+            width: auto;
+            max-width: none;
+            height: auto;
         }
 
         #gennx .plugin-image-pair figcaption {
@@ -1464,7 +1485,12 @@
 
         @media (max-width: 900px) {
             #gennx .plugin-image-pair {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #gennx .plugin-image-pair .product-image {
+                max-width: 100%;
             }
         }
 
