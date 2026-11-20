@@ -1450,7 +1450,10 @@
 
         /* [GEN NX / BestoDesigner — align with sibling tabs] */
         #gennx .process-flow {
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-auto-rows: 1fr;
+            gap: 8px;
+            align-items: stretch;
         }
 
         #gennx .process-flow .flow-step::after {
@@ -1459,11 +1462,32 @@
 
         #gennx .process-flow .flow-step {
             width: 100%;
+            min-height: 0;
+            height: 100%;
+            gap: 6px;
+            padding: 10px 12px;
+            border-radius: 10px;
             text-align: left;
             font: inherit;
             color: inherit;
             cursor: pointer;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        #gennx .process-flow .step-number {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            font-size: 11px;
+        }
+
+        #gennx .process-flow .flow-step p {
+            font-size: 12px;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         #gennx .process-flow .flow-step:hover {
@@ -1585,25 +1609,32 @@
 
         #gennx .gennx-step-hotspot__label {
             position: absolute;
-            left: 6px;
-            top: 6px;
-            max-width: calc(100% - 12px);
-            padding: 4px 8px;
-            border-radius: 4px;
+            left: 3px;
+            top: 3px;
+            max-width: calc(100% - 6px);
+            padding: 1px 4px;
+            border-radius: 3px;
             background: #0a4f8a;
             color: #fff;
-            font-size: 12px;
+            font-size: 9px;
             font-weight: 600;
-            line-height: 1.3;
+            line-height: 1.2;
+            letter-spacing: 0;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;
-            box-shadow: 0 4px 12px rgba(10, 79, 138, 0.28);
+            text-overflow: clip;
+            box-shadow: 0 2px 8px rgba(10, 79, 138, 0.28);
         }
 
         #gennx .gennx-step-hotspot[data-label-pos="below"] .gennx-step-hotspot__label {
             top: auto;
-            bottom: 6px;
+            bottom: 2px;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            max-width: none;
+            overflow: visible;
+            text-overflow: clip;
         }
 
         @keyframes gennx-hotspot-pulse {
@@ -4126,7 +4157,7 @@
                     alt: 'BestoDesigner Save와 Update List',
                     highlights: [
                         { left: 1.0, top: 5.5, width: 19.0, height: 86.0, label: 'Update List', labelPos: 'inside' },
-                        { left: 54.2, top: 91.2, width: 5.8, height: 6.5, label: 'Save', labelPos: 'below' }
+                        { left: 52.5, top: 94.0, width: 4.9, height: 4.4, label: 'Save', labelPos: 'below' }
                     ]
                 },
                 caption: '06 · Save로 After ID·Name을 확인한 뒤 Update List(왼쪽)에 설계를 쌓습니다.'
@@ -4137,7 +4168,7 @@
                     src: GENNX_FULL_SRC,
                     alt: 'BestoDesigner Update List — Change로 gen 반영',
                     highlights: [
-                        { left: 15.5, top: 91.2, width: 5.5, height: 6.5, label: 'Change', labelPos: 'below' }
+                        { left: 16.1, top: 94.4, width: 4.1, height: 4.4, label: 'Change', labelPos: 'below' }
                     ]
                 },
                 caption: '07 · Update List 하단 Change로 목록 전체를 gen에 반영합니다. 반영된 행은 목록에서 제거됩니다.'
