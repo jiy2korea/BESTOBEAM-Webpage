@@ -1047,6 +1047,23 @@
             max-width: min(1200px, 158vh);
         }
 
+        .plugin-shot-modal__content {
+            max-width: min(1200px, 96vw);
+            width: auto;
+        }
+
+        .plugin-shot-modal__img {
+            display: block;
+            max-width: 96vw;
+            max-height: 88vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            background: #fff;
+        }
+
         .video-modal .close-btn {
             position: absolute;
             top: -40px;
@@ -1440,6 +1457,102 @@
             display: none;
         }
 
+        #gennx .process-flow .flow-step {
+            width: 100%;
+            text-align: left;
+            font: inherit;
+            color: inherit;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        #gennx .process-flow .flow-step:hover {
+            border-color: rgba(15, 99, 168, 0.45);
+            box-shadow: 0 8px 20px rgba(15, 99, 168, 0.08);
+        }
+
+        #gennx .process-flow .flow-step:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        #gennx .process-flow .flow-step.is-active {
+            border-color: var(--color-primary);
+            background: linear-gradient(180deg, #f3f8fc, #eaf3fb);
+            box-shadow: 0 0 0 1px var(--color-primary), 0 10px 24px rgba(15, 99, 168, 0.12);
+        }
+
+        #gennx .process-flow .flow-step.is-active .step-number {
+            background: #0a4f8a;
+        }
+
+        #gennx .gennx-step-preview {
+            margin-top: 28px;
+            padding: 18px;
+            background: #f7fafc;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+        }
+
+        #gennx .gennx-step-preview__hint {
+            margin: 0 0 14px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .gennx-step-preview__media {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        #gennx .gennx-step-preview__media[data-mode="single"] .gennx-step-preview__item--secondary {
+            display: none;
+        }
+
+        #gennx .gennx-step-preview__item {
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__item {
+            width: max-content;
+            max-width: 100%;
+        }
+
+        #gennx .gennx-step-preview__img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            background: #fff;
+            cursor: zoom-in;
+        }
+
+        #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__img {
+            width: 80%;
+            max-width: none;
+        }
+
+        #gennx .gennx-step-preview__caption {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.55;
+        }
+
+        #gennx .gennx-step-preview__label {
+            margin: 8px 0 0;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
         /* 세화면 스크린샷: technical-box와 같은 본문 칼럼 폭(100%) */
         #gennx > .container > .product-image-container {
             max-width: none;
@@ -1493,6 +1606,16 @@
                 width: 80%;
                 max-width: 100%;
                 height: auto;
+            }
+
+            #gennx .gennx-step-preview__media[data-mode="pair"] {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__img {
+                width: 80%;
+                max-width: 100%;
             }
         }
 
@@ -1718,36 +1841,58 @@
 
             <div class="technical-box" style="margin-top: 50px;">
                 <h2>검색부터 Change까지</h2>
-                <p>단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다.</p>
-                <div class="process-flow">
-                    <div class="flow-step">
+                <p>단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다. 각 단계를 누르면 해당 화면이 아래에 보입니다.</p>
+                <div class="process-flow" id="gennx-process-flow" role="tablist" aria-label="검색부터 Change까지 단계">
+                    <button type="button" class="flow-step is-active" role="tab" id="gennx-step-01" aria-selected="true" aria-controls="gennx-step-preview" data-gennx-step="01">
                         <span class="step-number">01</span>
                         <p>대상 고르기 — Section 드롭다운 또는 Member에서 Refresh</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-02" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="02">
                         <span class="step-number">02</span>
                         <p>Additional Informations 확인 (철근·전단연결재·높이·재료 등)</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-03" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="03">
                         <span class="step-number">03</span>
                         <p>Search Satisfied Section으로 조건 만족 단면 검색</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-04" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="04">
                         <span class="step-number">04</span>
                         <p>Section List에서 SEL로 선택 — Preview가 따름</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-05" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="05">
                         <span class="step-number">05</span>
                         <p>필요 시 Detail… / Design… 후 Done으로 해당 행 재계산</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-06" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="06">
                         <span class="step-number">06</span>
                         <p>Save로 After ID·Name 확인 → Update List 적재</p>
-                    </div>
-                    <div class="flow-step">
+                    </button>
+                    <button type="button" class="flow-step" role="tab" id="gennx-step-07" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="07">
                         <span class="step-number">07</span>
                         <p>Change로 목록 전체를 gen에 반영 (반영 행은 목록에서 제거)</p>
+                    </button>
+                </div>
+                <div class="gennx-step-preview" id="gennx-step-preview" role="tabpanel" aria-labelledby="gennx-step-01">
+                    <p class="gennx-step-preview__hint">단계를 클릭하면 해당 앱 화면이 바뀝니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
+                    <div class="gennx-step-preview__media" data-mode="single">
+                        <figure class="gennx-step-preview__item gennx-step-preview__item--primary">
+                            <img class="gennx-step-preview__img" id="gennx-step-img-primary"
+                                src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
+                                alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸"
+                                width="1640" height="789" decoding="async"
+                                data-full-src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg">
+                            <figcaption class="gennx-step-preview__label" id="gennx-step-label-primary" hidden></figcaption>
+                        </figure>
+                        <figure class="gennx-step-preview__item gennx-step-preview__item--secondary">
+                            <img class="gennx-step-preview__img" id="gennx-step-img-secondary"
+                                src="assets/images/plugin/design.jpg"
+                                alt="BestoDesigner Design 대화상자 — H·U 치수 수정"
+                                width="308" height="487" decoding="async"
+                                data-full-src="assets/images/plugin/design.jpg">
+                            <figcaption class="gennx-step-preview__label" id="gennx-step-label-secondary">Design… — 치수 수정</figcaption>
+                        </figure>
                     </div>
+                    <p class="gennx-step-preview__caption" id="gennx-step-caption">01 · 메인 세 칸 화면에서 Section 드롭다운 또는 Member Refresh로 대상을 고릅니다.</p>
                 </div>
             </div>
 
@@ -2667,6 +2812,13 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
+        </div>
+    </div>
+
+    <div id="pluginShotModal" class="video-modal" onclick="closePluginShotModal()">
+        <div class="modal-content plugin-shot-modal__content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closePluginShotModal()" aria-label="닫기">&times;</button>
+            <img id="pluginShotModalImg" class="plugin-shot-modal__img" src="" alt="">
         </div>
     </div>
 
@@ -3801,9 +3953,191 @@
             if (frame) frame.src = '';
         }
 
+        const GENNX_FULL_SRC = 'assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg';
+        const GENNX_DETAIL_SRC = 'assets/images/plugin/detail.jpg';
+        const GENNX_DESIGN_SRC = 'assets/images/plugin/design.jpg';
+
+        const GENNX_STEP_SHOTS = {
+            '01': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸'
+                },
+                caption: '01 · 메인 세 칸 화면에서 Section 드롭다운 또는 Member Refresh로 대상을 고릅니다.'
+            },
+            '02': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner Design 칸 — Additional Informations'
+                },
+                caption: '02 · Design 칸 상단 Additional Informations에서 철근·전단연결재·높이·재료 등을 확인합니다.'
+            },
+            '03': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner Design 칸 — Search Satisfied Section'
+                },
+                caption: '03 · Search Satisfied Section으로 조건을 만족하는 합성 H+U 단면을 검색합니다.'
+            },
+            '04': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner Section List와 Preview'
+                },
+                caption: '04 · Section List에서 SEL로 고르면 오른쪽 Preview가 따라갑니다.'
+            },
+            '05': {
+                mode: 'pair',
+                primary: {
+                    src: GENNX_DETAIL_SRC,
+                    alt: 'BestoDesigner Detail 대화상자 — H+U 검토서',
+                    label: 'Detail… — 검토서'
+                },
+                secondary: {
+                    src: GENNX_DESIGN_SRC,
+                    alt: 'BestoDesigner Design 대화상자 — H·U 치수 수정',
+                    label: 'Design… — 치수 수정'
+                },
+                caption: '05 · Detail…로 검토서를 보거나 Design…에서 치수를 바꾼 뒤 Done으로 해당 행을 재계산합니다.'
+            },
+            '06': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner Save와 Update List'
+                },
+                caption: '06 · Save로 After ID·Name을 확인한 뒤 Update List(왼쪽)에 설계를 쌓습니다.'
+            },
+            '07': {
+                mode: 'single',
+                primary: {
+                    src: GENNX_FULL_SRC,
+                    alt: 'BestoDesigner Update List — Change로 gen 반영'
+                },
+                caption: '07 · Update List 하단 Change로 목록 전체를 gen에 반영합니다. 반영된 행은 목록에서 제거됩니다.'
+            }
+        };
+
+        function selectGennxStep(stepId) {
+            const shot = GENNX_STEP_SHOTS[stepId];
+            if (!shot) return;
+
+            const steps = document.querySelectorAll('#gennx-process-flow [data-gennx-step]');
+            steps.forEach(function(btn) {
+                const active = btn.getAttribute('data-gennx-step') === stepId;
+                btn.classList.toggle('is-active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+
+            const panel = document.getElementById('gennx-step-preview');
+            const media = panel && panel.querySelector('.gennx-step-preview__media');
+            const primaryImg = document.getElementById('gennx-step-img-primary');
+            const secondaryImg = document.getElementById('gennx-step-img-secondary');
+            const primaryLabel = document.getElementById('gennx-step-label-primary');
+            const secondaryLabel = document.getElementById('gennx-step-label-secondary');
+            const caption = document.getElementById('gennx-step-caption');
+            if (!panel || !media || !primaryImg || !caption) return;
+
+            panel.setAttribute('aria-labelledby', 'gennx-step-' + stepId);
+            media.setAttribute('data-mode', shot.mode);
+
+            primaryImg.src = shot.primary.src;
+            primaryImg.alt = shot.primary.alt;
+            primaryImg.setAttribute('data-full-src', shot.primary.src);
+
+            if (primaryLabel) {
+                if (shot.primary.label) {
+                    primaryLabel.textContent = shot.primary.label;
+                    primaryLabel.hidden = false;
+                } else {
+                    primaryLabel.textContent = '';
+                    primaryLabel.hidden = true;
+                }
+            }
+
+            if (secondaryImg && shot.secondary) {
+                secondaryImg.src = shot.secondary.src;
+                secondaryImg.alt = shot.secondary.alt;
+                secondaryImg.setAttribute('data-full-src', shot.secondary.src);
+            }
+            if (secondaryLabel) {
+                secondaryLabel.textContent = (shot.secondary && shot.secondary.label) || '';
+            }
+
+            caption.textContent = shot.caption;
+        }
+
+        function openPluginShotModal(src, alt) {
+            const modal = document.getElementById('pluginShotModal');
+            const img = document.getElementById('pluginShotModalImg');
+            if (!modal || !img || !src) return;
+            img.src = src;
+            img.alt = alt || '';
+            modal.classList.add('active');
+        }
+
+        function closePluginShotModal() {
+            const modal = document.getElementById('pluginShotModal');
+            const img = document.getElementById('pluginShotModalImg');
+            if (modal) modal.classList.remove('active');
+            if (img) {
+                img.src = '';
+                img.alt = '';
+            }
+        }
+
+        function initGennxStepShots() {
+            const flow = document.getElementById('gennx-process-flow');
+            if (!flow) return;
+
+            flow.addEventListener('click', function(event) {
+                const btn = event.target.closest('[data-gennx-step]');
+                if (!btn || !flow.contains(btn)) return;
+                selectGennxStep(btn.getAttribute('data-gennx-step'));
+            });
+
+            flow.addEventListener('keydown', function(event) {
+                const btn = event.target.closest('[data-gennx-step]');
+                if (!btn || !flow.contains(btn)) return;
+                const keys = ['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'];
+                if (keys.indexOf(event.key) === -1) return;
+
+                const buttons = Array.prototype.slice.call(flow.querySelectorAll('[data-gennx-step]'));
+                const index = buttons.indexOf(btn);
+                if (index < 0) return;
+
+                let next = index;
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = Math.min(index + 1, buttons.length - 1);
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = Math.max(index - 1, 0);
+                if (event.key === 'Home') next = 0;
+                if (event.key === 'End') next = buttons.length - 1;
+                if (next === index) return;
+
+                event.preventDefault();
+                buttons[next].focus();
+                selectGennxStep(buttons[next].getAttribute('data-gennx-step'));
+            });
+
+            const preview = document.getElementById('gennx-step-preview');
+            if (preview) {
+                preview.addEventListener('click', function(event) {
+                    const img = event.target.closest('.gennx-step-preview__img');
+                    if (!img || !preview.contains(img)) return;
+                    openPluginShotModal(img.getAttribute('data-full-src') || img.src, img.alt);
+                });
+            }
+
+            selectGennxStep('01');
+        }
+
         window.onload = function() {
             changeLang(null, savedLang());
             showTab(null, tabIdFromHash() || 'overview', false);
+            initGennxStepShots();
 
             window.addEventListener('hashchange', syncTabFromHash);
             window.addEventListener('popstate', syncTabFromHash);
@@ -3813,6 +4147,7 @@
                     closeVideoModal();
                     closeInstallModal();
                     closeYoutubeModal();
+                    closePluginShotModal();
                     closeMobileMenu();
                 }
             });
