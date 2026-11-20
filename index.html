@@ -1450,7 +1450,7 @@
             width: 100%;
         }
 
-        /* Detail/Design 팝업: 고유(자연) 크기 — width:100%로 늘리지 않음 */
+        /* Detail/Design 팝업: 고유(자연) 폭의 약 80% — 세화면(three-pane)은 별도 규칙으로 100% 유지 */
         #gennx .plugin-image-pair {
             display: flex;
             flex-wrap: wrap;
@@ -1466,14 +1466,14 @@
 
         #gennx .plugin-image-pair .product-image-container {
             margin-top: 0;
-            width: auto;
-            max-width: none;
+            width: max-content;
+            max-width: 100%;
         }
 
         #gennx .plugin-image-pair .product-image {
-            width: auto;
-            max-width: none;
+            width: 80%;
             height: auto;
+            max-width: none;
         }
 
         #gennx .plugin-image-pair figcaption {
@@ -1490,7 +1490,9 @@
             }
 
             #gennx .plugin-image-pair .product-image {
+                width: 80%;
                 max-width: 100%;
+                height: auto;
             }
         }
 
