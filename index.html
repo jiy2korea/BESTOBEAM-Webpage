@@ -177,6 +177,19 @@
             transform: translateY(-1px);
         }
 
+        .global-nav .btn-gennx-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .global-nav .btn-gennx-download__icon {
+            flex: 0 0 auto;
+            display: block;
+            width: 12px;
+            height: 12px;
+        }
+
         .global-nav .right-logo {
             position: absolute;
             right: 22px;
@@ -1833,7 +1846,14 @@
             <div class="left-button">
                 <a id="btn-design-text" href="https://besto-dev.agreeabletree-f610a989.koreacentral.azurecontainerapps.io/" target="_blank"
                     class="btn-design">BESTOBEAM 설계</a>
-                <a id="btn-gennx-text" href="assets/BestoDesigner-MidasGenNX-Plugin.zip" class="btn-design" download="BestoDesigner-MidasGenNX-Plugin.zip">마이다스 GEN NX 플러그인</a>
+                <a href="assets/BestoDesigner-MidasGenNX-Plugin.zip" class="btn-design btn-gennx-download" download="BestoDesigner-MidasGenNX-Plugin.zip">
+                    <svg class="btn-gennx-download__icon" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M8 2.25v7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M5.25 7.5 8 10.25 10.75 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.25 13.25h9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span id="btn-gennx-text">마이다스 GEN NX 플러그인</span>
+                </a>
                 <button id="btn-video-text" onclick="openVideoModal()" class="btn-design">홍보영상</button>
                 <button id="btn-drb-text" onclick="openYoutubeModal()" class="btn-design">DRB 소개</button>
             </div>
