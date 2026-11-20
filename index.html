@@ -4165,6 +4165,15 @@
             }
         };
 
+        /* CSS mask-/background-position % ≠ element left/top %.
+           Position % places that point of the mask layer on that point of the box:
+           offset = (100 - size) * pos/100. Invert so cutouts share the amber box rect. */
+        function gennxMaskPosPct(edgePct, sizePct) {
+            if (sizePct >= 100) return 0;
+            if (sizePct <= 0) return edgePct;
+            return (edgePct / (100 - sizePct)) * 100;
+        }
+
         function applyGennxDimMask(dimEl, highlights) {
             if (!dimEl) return;
             if (!highlights.length) {
@@ -4180,7 +4189,10 @@
             highlights.forEach(function(box) {
                 layers.push('linear-gradient(#000,#000)');
                 sizes.push(box.width + '% ' + box.height + '%');
-                positions.push(box.left + '% ' + box.top + '%');
+                positions.push(
+                    gennxMaskPosPct(box.left, box.width) + '% ' +
+                    gennxMaskPosPct(box.top, box.height) + '%'
+                );
             });
             const image = layers.join(',');
             const size = sizes.join(',');
