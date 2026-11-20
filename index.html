@@ -1585,26 +1585,25 @@
             border-radius: 10px;
         }
 
+        /* Shared dim with mask cutouts (single or multi). Boxes stay amber only. */
+        #gennx .gennx-step-hotspots__dim {
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 28, 44, 0.4);
+            z-index: 0;
+        }
+
         #gennx .gennx-step-hotspot {
             position: absolute;
             box-sizing: border-box;
+            z-index: 1;
             border: 2.5px solid #f0a202;
             border-radius: 5px;
             background: rgba(240, 162, 2, 0.12);
             box-shadow:
                 0 0 0 2px rgba(255, 255, 255, 0.95),
-                0 0 0 9999px rgba(12, 28, 44, 0.4),
-                0 8px 22px rgba(15, 99, 168, 0.2);
+                0 8px 22px rgba(160, 100, 0, 0.22);
             animation: gennx-hotspot-pulse 2s ease-in-out infinite;
-        }
-
-        /* Multiple regions: borders only (stacked 9999px dims would fight). */
-        #gennx .gennx-step-preview__hotspots[data-multi="true"] .gennx-step-hotspot {
-            box-shadow:
-                0 0 0 2px rgba(255, 255, 255, 0.95),
-                0 8px 20px rgba(15, 99, 168, 0.22);
-            border-color: #0f63a8;
-            background: rgba(15, 99, 168, 0.18);
         }
 
         #gennx .gennx-step-hotspot__label {
@@ -1614,7 +1613,7 @@
             max-width: calc(100% - 6px);
             padding: 1px 4px;
             border-radius: 3px;
-            background: #0a4f8a;
+            background: #a66a00;
             color: #fff;
             font-size: 9px;
             font-weight: 600;
@@ -1623,7 +1622,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: clip;
-            box-shadow: 0 2px 8px rgba(10, 79, 138, 0.28);
+            box-shadow: 0 2px 8px rgba(166, 106, 0, 0.28);
         }
 
         #gennx .gennx-step-hotspot[data-label-pos="below"] .gennx-step-hotspot__label {
@@ -1640,15 +1639,6 @@
         @keyframes gennx-hotspot-pulse {
             0%, 100% { background: rgba(240, 162, 2, 0.1); }
             50% { background: rgba(240, 162, 2, 0.22); }
-        }
-
-        #gennx .gennx-step-preview__hotspots[data-multi="true"] .gennx-step-hotspot {
-            animation: gennx-hotspot-pulse-multi 2s ease-in-out infinite;
-        }
-
-        @keyframes gennx-hotspot-pulse-multi {
-            0%, 100% { background: rgba(15, 99, 168, 0.12); }
-            50% { background: rgba(15, 99, 168, 0.24); }
         }
 
         #gennx .gennx-step-preview__caption {
@@ -4175,11 +4165,49 @@
             }
         };
 
+        function applyGennxDimMask(dimEl, highlights) {
+            if (!dimEl) return;
+            if (!highlights.length) {
+                dimEl.hidden = true;
+                dimEl.style.webkitMaskImage = '';
+                dimEl.style.maskImage = '';
+                return;
+            }
+            dimEl.hidden = false;
+            const layers = ['linear-gradient(#000,#000)'];
+            const sizes = ['100% 100%'];
+            const positions = ['0 0'];
+            highlights.forEach(function(box) {
+                layers.push('linear-gradient(#000,#000)');
+                sizes.push(box.width + '% ' + box.height + '%');
+                positions.push(box.left + '% ' + box.top + '%');
+            });
+            const image = layers.join(',');
+            const size = sizes.join(',');
+            const position = positions.join(',');
+            dimEl.style.webkitMaskImage = image;
+            dimEl.style.maskImage = image;
+            dimEl.style.webkitMaskSize = size;
+            dimEl.style.maskSize = size;
+            dimEl.style.webkitMaskPosition = position;
+            dimEl.style.maskPosition = position;
+            dimEl.style.webkitMaskRepeat = 'no-repeat';
+            dimEl.style.maskRepeat = 'no-repeat';
+            /* Punch highlight rects out of the full-frame dim. */
+            dimEl.style.webkitMaskComposite = 'xor';
+            dimEl.style.maskComposite = 'exclude';
+        }
+
         function renderGennxHotspots(container, highlights) {
             if (!container) return;
             container.innerHTML = '';
             const list = Array.isArray(highlights) ? highlights : [];
-            container.setAttribute('data-multi', list.length > 1 ? 'true' : 'false');
+
+            const dim = document.createElement('div');
+            dim.className = 'gennx-step-hotspots__dim';
+            dim.setAttribute('aria-hidden', 'true');
+            container.appendChild(dim);
+            applyGennxDimMask(dim, list);
 
             list.forEach(function(box) {
                 const el = document.createElement('div');
