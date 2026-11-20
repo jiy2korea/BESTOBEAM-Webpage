@@ -1813,6 +1813,57 @@
             text-align: center;
         }
 
+        /* Plug-in 설치·실행 안내 (Marketplace / My Work) */
+        #gennx .gennx-howto-shots {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-top: var(--spacing-element);
+            width: 100%;
+        }
+
+        #gennx .gennx-howto-shots figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        #gennx .gennx-howto-shots .product-image-container {
+            margin-top: 0;
+            width: 100%;
+            max-width: none;
+        }
+
+        #gennx .gennx-howto-shots .product-image {
+            width: 100%;
+            height: auto;
+            max-width: none;
+        }
+
+        #gennx .gennx-howto-shots .gennx-howto-shot--marketplace .product-image-container {
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #gennx .gennx-howto-shots figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        #gennx .gennx-howto-ref {
+            margin-top: 18px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        #gennx .gennx-howto-ref a {
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
         @media (max-width: 900px) {
             #gennx .plugin-image-pair {
                 flex-direction: column;
@@ -2174,6 +2225,32 @@
                         alt="BestoDesigner Design 대화상자 — H·U 치수 수정" class="product-image">
                     <figcaption id="gennx-fig-design">Design… — 치수 수정</figcaption>
                 </div>
+            </div>
+
+            <div class="technical-box" style="margin-top: 50px;">
+                <h2 id="gennx-howto-title">플러그인 설치·실행</h2>
+                <p id="gennx-howto-desc">상단의 <strong>마이다스 GEN NX 플러그인</strong>으로 ZIP을 받은 뒤, GEN NX Plug-in에서 올리고 실행합니다.</p>
+                <ul>
+                    <li id="gennx-howto-1"><strong>Marketplace:</strong> Apps → Plug-in을 누르면 Marketplace가 열립니다.</li>
+                    <li id="gennx-howto-2"><strong>My Work:</strong> 왼쪽 My Work 아이콘 → Upload → Title·제품 정보·ZIP 선택 후 Upload → 목록에서 Besto Designer를 고르고 Run.</li>
+                </ul>
+                <p class="gennx-howto-ref" id="gennx-howto-ref">개발자용 업로드 절차는 <a href="https://support.midasuser.com/hc/ko/articles/44321750649369-A-Guide-to-Creating-Plug-in-for-Developers" target="_blank" rel="noopener noreferrer">MIDAS Plug-in 가이드</a>를 참고하세요.</p>
+            </div>
+            <div class="gennx-howto-shots">
+                <figure class="product-image-container gennx-howto-shot--marketplace">
+                    <img id="gennx-howto-img1" loading="lazy" width="1369" height="2475" decoding="async"
+                        src="assets/images/plugin/howto-01-marketplace.png"
+                        alt="GEN NX Apps → Plug-in → Marketplace 화면"
+                        class="product-image">
+                    <figcaption id="gennx-howto-fig1">Apps → Plug-in → Marketplace</figcaption>
+                </figure>
+                <figure class="product-image-container gennx-howto-shot--upload">
+                    <img id="gennx-howto-img2" loading="lazy" width="7141" height="1888" decoding="async"
+                        src="assets/images/plugin/howto-02-upload-run.png"
+                        alt="GEN NX My Work에서 플러그인 업로드 후 Run까지"
+                        class="product-image">
+                    <figcaption id="gennx-howto-fig2">My Work → Upload → Run</figcaption>
+                </figure>
             </div>
         </div>
     </main>
@@ -3185,6 +3262,15 @@
                 'gennx-dd-title': 'Detail과 Design',
                 'gennx-dd-detail': '<strong>Detail…</strong>은 고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 휨·전단·처짐·진동을 보여 줍니다.',
                 'gennx-dd-design': '<strong>Design…</strong>은 고른 행의 H·U 치수를 바꾸는 창입니다. Done은 그 행만 다시 계산하고, 창의 Detail은 바꾼 치수의 검토서를 엽니다.',
+                'gennx-howto-title': '플러그인 설치·실행',
+                'gennx-howto-desc': '상단의 <strong>마이다스 GEN NX 플러그인</strong>으로 ZIP을 받은 뒤, GEN NX Plug-in에서 올리고 실행합니다.',
+                'gennx-howto-1': '<strong>Marketplace:</strong> Apps → Plug-in을 누르면 Marketplace가 열립니다.',
+                'gennx-howto-2': '<strong>My Work:</strong> 왼쪽 My Work 아이콘 → Upload → Title·제품 정보·ZIP 선택 후 Upload → 목록에서 Besto Designer를 고르고 Run.',
+                'gennx-howto-ref': '개발자용 업로드 절차는 <a href="https://support.midasuser.com/hc/ko/articles/44321750649369-A-Guide-to-Creating-Plug-in-for-Developers" target="_blank" rel="noopener noreferrer">MIDAS Plug-in 가이드</a>를 참고하세요.',
+                'gennx-howto-fig1': 'Apps → Plug-in → Marketplace',
+                'gennx-howto-fig2': 'My Work → Upload → Run',
+                'gennx-howto-alt1': 'GEN NX Apps → Plug-in → Marketplace 화면',
+                'gennx-howto-alt2': 'GEN NX My Work에서 플러그인 업로드 후 Run까지',
 
                 'test-title': '실증적 검증: <br>RIST/KOLAS 인증 실험 결과.',
                 'test-subhead': '공인 기관의 엄격한 테스트를 통해 구조 성능과 안전성을 입증했습니다.',
@@ -3483,6 +3569,15 @@
                 'gennx-dd-title': 'Detail and Design',
                 'gennx-dd-detail': '<strong>Detail…</strong> is the review report for the selected H+U. It shows bending, shear, deflection, and vibration for construction and composite stages.',
                 'gennx-dd-design': '<strong>Design…</strong> edits H·U dimensions for the selected row. Done recalculates that row only; Detail in the dialog opens the review for the changed dimensions.',
+                'gennx-howto-title': 'Install and run the plugin',
+                'gennx-howto-desc': 'Download the ZIP with the top-bar <strong>MIDAS GEN NX Plugin</strong> button, then upload and run it in GEN NX Plug-in.',
+                'gennx-howto-1': '<strong>Marketplace:</strong> Apps → Plug-in opens Marketplace.',
+                'gennx-howto-2': '<strong>My Work:</strong> Left My Work icon → Upload → enter Title and product info, select the ZIP, Upload → pick Besto Designer in the list and Run.',
+                'gennx-howto-ref': 'For the developer upload flow, see the <a href="https://support.midasuser.com/hc/ko/articles/44321750649369-A-Guide-to-Creating-Plug-in-for-Developers" target="_blank" rel="noopener noreferrer">MIDAS Plug-in guide</a>.',
+                'gennx-howto-fig1': 'Apps → Plug-in → Marketplace',
+                'gennx-howto-fig2': 'My Work → Upload → Run',
+                'gennx-howto-alt1': 'GEN NX Apps → Plug-in → Marketplace screen',
+                'gennx-howto-alt2': 'GEN NX My Work: upload the plugin, then Run',
 
                 'test-title': 'Verification: <br>RIST/KOLAS Certified Test Results.',
                 'test-subhead': 'Structural performance and safety proven through rigorous testing by authorized institutions.',
@@ -3776,6 +3871,15 @@
                 'gennx-dd-title': 'Detail 与 Design',
                 'gennx-dd-detail': '<strong>Detail…</strong> 是所选 H+U 的审查报告。显示施工阶段与组合阶段的弯曲、剪切、挠度与振动。',
                 'gennx-dd-design': '<strong>Design…</strong> 是修改所选行 H·U 尺寸的窗口。Done 仅重新计算该行；窗口中的 Detail 打开修改后尺寸的审查报告。',
+                'gennx-howto-title': '安装并运行插件',
+                'gennx-howto-desc': '先用顶部的<strong>MIDAS GEN NX 插件</strong>下载 ZIP，再在 GEN NX Plug-in 中上传并运行。',
+                'gennx-howto-1': '<strong>Marketplace:</strong> 选择 Apps → Plug-in 即可打开 Marketplace。',
+                'gennx-howto-2': '<strong>My Work:</strong> 左侧 My Work 图标 → Upload → 填写 Title 与产品信息、选择 ZIP 后 Upload → 在列表中选择 Besto Designer 并 Run。',
+                'gennx-howto-ref': '开发者上传流程请参阅 <a href="https://support.midasuser.com/hc/ko/articles/44321750649369-A-Guide-to-Creating-Plug-in-for-Developers" target="_blank" rel="noopener noreferrer">MIDAS Plug-in 指南</a>。',
+                'gennx-howto-fig1': 'Apps → Plug-in → Marketplace',
+                'gennx-howto-fig2': 'My Work → Upload → Run',
+                'gennx-howto-alt1': 'GEN NX Apps → Plug-in → Marketplace 界面',
+                'gennx-howto-alt2': 'GEN NX My Work：上传插件后点击 Run',
 
                 'test-title': '实证验证：<br>RIST/KOLAS 认证试验结果。',
                 'test-subhead': '通过权威机构的严格测试，验证了结构性能和安全性。',
@@ -4070,6 +4174,15 @@
                 'gennx-dd-title': 'Detail và Design',
                 'gennx-dd-detail': '<strong>Detail…</strong> là báo cáo kiểm tra của H+U đã chọn. Hiển thị uốn, cắt, võng và rung cho giai đoạn thi công và giai đoạn tổ hợp.',
                 'gennx-dd-design': '<strong>Design…</strong> là cửa sổ đổi kích thước H·U của hàng đã chọn. Done chỉ tính lại hàng đó; Detail trong cửa sổ mở báo cáo cho kích thước đã đổi.',
+                'gennx-howto-title': 'Cài đặt và chạy plugin',
+                'gennx-howto-desc': 'Tải ZIP bằng nút <strong>MIDAS GEN NX Plugin</strong> trên thanh trên, rồi tải lên và chạy trong GEN NX Plug-in.',
+                'gennx-howto-1': '<strong>Marketplace:</strong> Apps → Plug-in sẽ mở Marketplace.',
+                'gennx-howto-2': '<strong>My Work:</strong> Biểu tượng My Work bên trái → Upload → nhập Title và thông tin sản phẩm, chọn ZIP, Upload → chọn Besto Designer trong danh sách rồi Run.',
+                'gennx-howto-ref': 'Quy trình upload dành cho nhà phát triển xem <a href="https://support.midasuser.com/hc/ko/articles/44321750649369-A-Guide-to-Creating-Plug-in-for-Developers" target="_blank" rel="noopener noreferrer">hướng dẫn MIDAS Plug-in</a>.',
+                'gennx-howto-fig1': 'Apps → Plug-in → Marketplace',
+                'gennx-howto-fig2': 'My Work → Upload → Run',
+                'gennx-howto-alt1': 'Màn hình GEN NX Apps → Plug-in → Marketplace',
+                'gennx-howto-alt2': 'GEN NX My Work: tải plugin lên rồi Run',
 
                 'test-title': 'Kiểm chứng thực tế: <br>Kết quả thử nghiệm đạt chứng nhận RIST/KOLAS.',
                 'test-subhead': 'Hiệu suất cấu trúc và tính an toàn đã được chứng minh thông qua các bài kiểm tra nghiêm ngặt của các cơ quan có thẩm quyền.',
@@ -4365,6 +4478,15 @@
             const gennxFlow = document.getElementById('gennx-process-flow');
             if (gennxFlow && langData['gennx-flow-aria']) {
                 gennxFlow.setAttribute('aria-label', langData['gennx-flow-aria']);
+            }
+
+            const howtoImg1 = document.getElementById('gennx-howto-img1');
+            if (howtoImg1 && langData['gennx-howto-alt1']) {
+                howtoImg1.alt = langData['gennx-howto-alt1'];
+            }
+            const howtoImg2 = document.getElementById('gennx-howto-img2');
+            if (howtoImg2 && langData['gennx-howto-alt2']) {
+                howtoImg2.alt = langData['gennx-howto-alt2'];
             }
 
             const activeGennx = document.querySelector('#gennx-process-flow [data-gennx-step].is-active');
