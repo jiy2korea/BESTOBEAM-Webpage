@@ -1664,6 +1664,98 @@
             width: 100%;
         }
 
+        /* Overview: mark Update List / Design / Preview columns on 전체화면 */
+        #gennx .gennx-pane-overview__frame {
+            position: relative;
+            display: block;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        #gennx .gennx-pane-overview__frame .product-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+        }
+
+        #gennx .gennx-pane-overview__zones {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        #gennx .gennx-pane-overview__zone {
+            position: absolute;
+            top: 5.5%;
+            height: 88%;
+            box-sizing: border-box;
+            border: 2.5px solid #f0a202;
+            border-radius: 5px;
+            background: rgba(240, 162, 2, 0.08);
+            box-shadow:
+                0 0 0 2px rgba(255, 255, 255, 0.92),
+                0 8px 22px rgba(160, 100, 0, 0.18);
+        }
+
+        #gennx .gennx-pane-overview__zone[data-pane="update-list"] {
+            left: 1%;
+            width: 19.5%;
+        }
+
+        #gennx .gennx-pane-overview__zone[data-pane="design"] {
+            left: 21.2%;
+            width: 41.8%;
+        }
+
+        #gennx .gennx-pane-overview__zone[data-pane="preview"] {
+            left: 63.8%;
+            width: 35.5%;
+        }
+
+        #gennx .gennx-pane-overview__label {
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            max-width: calc(100% - 6px);
+            padding: 3px 8px;
+            border-radius: 3px;
+            background: #a66a00;
+            color: #fff;
+            font-size: clamp(11px, 1.35vw, 15px);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(166, 106, 0, 0.28);
+        }
+
+        #gennx .gennx-pane-overview__divider {
+            position: absolute;
+            top: 4%;
+            bottom: 4%;
+            width: 0;
+            border-left: 2px dashed rgba(166, 106, 0, 0.85);
+            z-index: 3;
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.95));
+        }
+
+        #gennx .gennx-pane-overview__divider[data-at="lm"] {
+            left: 20.7%;
+        }
+
+        #gennx .gennx-pane-overview__divider[data-at="mr"] {
+            left: 63.5%;
+        }
+
+        @media (max-width: 700px) {
+            #gennx .gennx-pane-overview__label {
+                font-size: 10px;
+                padding: 2px 5px;
+            }
+        }
+
         /* Detail/Design 팝업: 고유(자연) 폭의 약 80% — 세화면(three-pane)은 별도 규칙으로 100% 유지 */
         #gennx .plugin-image-pair {
             display: flex;
@@ -1943,10 +2035,25 @@
                     <li><strong>Preview:</strong> Section List에서 고른 단면의 이름과 검토 요약.</li>
                 </ul>
             </div>
-            <div class="product-image-container">
-                <img loading="lazy" width="1640" height="789" decoding="async"
-                    src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
-                    alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸" class="product-image">
+            <div class="product-image-container gennx-pane-overview">
+                <div class="gennx-pane-overview__frame">
+                    <img loading="lazy" width="1640" height="789" decoding="async"
+                        src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
+                        alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸" class="product-image">
+                    <div class="gennx-pane-overview__zones" aria-hidden="true">
+                        <div class="gennx-pane-overview__zone" data-pane="update-list">
+                            <span class="gennx-pane-overview__label">Update List</span>
+                        </div>
+                        <div class="gennx-pane-overview__zone" data-pane="design">
+                            <span class="gennx-pane-overview__label">Design</span>
+                        </div>
+                        <div class="gennx-pane-overview__zone" data-pane="preview">
+                            <span class="gennx-pane-overview__label">Preview</span>
+                        </div>
+                        <div class="gennx-pane-overview__divider" data-at="lm"></div>
+                        <div class="gennx-pane-overview__divider" data-at="mr"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
