@@ -1524,11 +1524,23 @@
             max-width: 100%;
         }
 
+        #gennx .gennx-step-preview__frame {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__frame {
+            width: 80%;
+            max-width: none;
+        }
+
         #gennx .gennx-step-preview__img {
             display: block;
             width: 100%;
             height: auto;
-            margin: 0 auto;
+            margin: 0;
             border-radius: 10px;
             border: 1px solid var(--color-border);
             background: #fff;
@@ -1536,8 +1548,76 @@
         }
 
         #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__img {
-            width: 80%;
+            width: 100%;
             max-width: none;
+        }
+
+        #gennx .gennx-step-preview__hotspots {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        #gennx .gennx-step-hotspot {
+            position: absolute;
+            box-sizing: border-box;
+            border: 2.5px solid #f0a202;
+            border-radius: 5px;
+            background: rgba(240, 162, 2, 0.12);
+            box-shadow:
+                0 0 0 2px rgba(255, 255, 255, 0.95),
+                0 0 0 9999px rgba(12, 28, 44, 0.4),
+                0 8px 22px rgba(15, 99, 168, 0.2);
+            animation: gennx-hotspot-pulse 2s ease-in-out infinite;
+        }
+
+        /* Multiple regions: borders only (stacked 9999px dims would fight). */
+        #gennx .gennx-step-preview__hotspots[data-multi="true"] .gennx-step-hotspot {
+            box-shadow:
+                0 0 0 2px rgba(255, 255, 255, 0.95),
+                0 8px 20px rgba(15, 99, 168, 0.22);
+            border-color: #0f63a8;
+            background: rgba(15, 99, 168, 0.18);
+        }
+
+        #gennx .gennx-step-hotspot__label {
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            max-width: calc(100% - 12px);
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #0a4f8a;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: 0 4px 12px rgba(10, 79, 138, 0.28);
+        }
+
+        #gennx .gennx-step-hotspot[data-label-pos="below"] .gennx-step-hotspot__label {
+            top: auto;
+            bottom: 6px;
+        }
+
+        @keyframes gennx-hotspot-pulse {
+            0%, 100% { background: rgba(240, 162, 2, 0.1); }
+            50% { background: rgba(240, 162, 2, 0.22); }
+        }
+
+        #gennx .gennx-step-preview__hotspots[data-multi="true"] .gennx-step-hotspot {
+            animation: gennx-hotspot-pulse-multi 2s ease-in-out infinite;
+        }
+
+        @keyframes gennx-hotspot-pulse-multi {
+            0%, 100% { background: rgba(15, 99, 168, 0.12); }
+            50% { background: rgba(15, 99, 168, 0.24); }
         }
 
         #gennx .gennx-step-preview__caption {
@@ -1613,9 +1693,18 @@
                 align-items: center;
             }
 
-            #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__img {
+            #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__frame {
                 width: 80%;
                 max-width: 100%;
+            }
+
+            #gennx .gennx-step-preview__media[data-mode="pair"] .gennx-step-preview__img {
+                width: 100%;
+                max-width: none;
+            }
+
+            #gennx .gennx-step-hotspot__label {
+                white-space: normal;
             }
         }
 
@@ -1873,22 +1962,28 @@
                     </button>
                 </div>
                 <div class="gennx-step-preview" id="gennx-step-preview" role="tabpanel" aria-labelledby="gennx-step-01">
-                    <p class="gennx-step-preview__hint">단계를 클릭하면 해당 앱 화면이 바뀝니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
+                    <p class="gennx-step-preview__hint">단계를 클릭하면 해당 UI 영역이 강조됩니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
                     <div class="gennx-step-preview__media" data-mode="single">
                         <figure class="gennx-step-preview__item gennx-step-preview__item--primary">
-                            <img class="gennx-step-preview__img" id="gennx-step-img-primary"
-                                src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
-                                alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸"
-                                width="1640" height="789" decoding="async"
-                                data-full-src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg">
+                            <div class="gennx-step-preview__frame">
+                                <img class="gennx-step-preview__img" id="gennx-step-img-primary"
+                                    src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg"
+                                    alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸"
+                                    width="1640" height="789" decoding="async"
+                                    data-full-src="assets/images/plugin/%EC%A0%84%EC%B2%B4%ED%99%94%EB%A9%B4.jpg">
+                                <div class="gennx-step-preview__hotspots" id="gennx-step-hotspots-primary" aria-hidden="true"></div>
+                            </div>
                             <figcaption class="gennx-step-preview__label" id="gennx-step-label-primary" hidden></figcaption>
                         </figure>
                         <figure class="gennx-step-preview__item gennx-step-preview__item--secondary">
-                            <img class="gennx-step-preview__img" id="gennx-step-img-secondary"
-                                src="assets/images/plugin/design.jpg"
-                                alt="BestoDesigner Design 대화상자 — H·U 치수 수정"
-                                width="308" height="487" decoding="async"
-                                data-full-src="assets/images/plugin/design.jpg">
+                            <div class="gennx-step-preview__frame">
+                                <img class="gennx-step-preview__img" id="gennx-step-img-secondary"
+                                    src="assets/images/plugin/design.jpg"
+                                    alt="BestoDesigner Design 대화상자 — H·U 치수 수정"
+                                    width="308" height="487" decoding="async"
+                                    data-full-src="assets/images/plugin/design.jpg">
+                                <div class="gennx-step-preview__hotspots" id="gennx-step-hotspots-secondary" aria-hidden="true"></div>
+                            </div>
                             <figcaption class="gennx-step-preview__label" id="gennx-step-label-secondary">Design… — 치수 수정</figcaption>
                         </figure>
                     </div>
@@ -3957,12 +4052,16 @@
         const GENNX_DETAIL_SRC = 'assets/images/plugin/detail.jpg';
         const GENNX_DESIGN_SRC = 'assets/images/plugin/design.jpg';
 
+        /* Highlight boxes: left/top/width/height as % of the screenshot (1640×789 full, dialogs separate). */
         const GENNX_STEP_SHOTS = {
             '01': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸'
+                    alt: 'BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸',
+                    highlights: [
+                        { left: 21.2, top: 5.5, width: 41.5, height: 11.5, label: 'Section / Member', labelPos: 'inside' }
+                    ]
                 },
                 caption: '01 · 메인 세 칸 화면에서 Section 드롭다운 또는 Member Refresh로 대상을 고릅니다.'
             },
@@ -3970,7 +4069,10 @@
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Design 칸 — Additional Informations'
+                    alt: 'BestoDesigner Design 칸 — Additional Informations',
+                    highlights: [
+                        { left: 21.2, top: 16.5, width: 41.5, height: 24.5, label: 'Additional Informations', labelPos: 'inside' }
+                    ]
                 },
                 caption: '02 · Design 칸 상단 Additional Informations에서 철근·전단연결재·높이·재료 등을 확인합니다.'
             },
@@ -3978,7 +4080,10 @@
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Design 칸 — Search Satisfied Section'
+                    alt: 'BestoDesigner Design 칸 — Search Satisfied Section',
+                    highlights: [
+                        { left: 49.8, top: 41.0, width: 13.4, height: 6.2, label: 'Search Satisfied Section', labelPos: 'below' }
+                    ]
                 },
                 caption: '03 · Search Satisfied Section으로 조건을 만족하는 합성 H+U 단면을 검색합니다.'
             },
@@ -3986,7 +4091,11 @@
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Section List와 Preview'
+                    alt: 'BestoDesigner Section List와 Preview',
+                    highlights: [
+                        { left: 21.2, top: 47.5, width: 41.5, height: 40.0, label: 'Section List · SEL', labelPos: 'inside' },
+                        { left: 63.8, top: 5.5, width: 35.5, height: 87.5, label: 'Preview', labelPos: 'inside' }
+                    ]
                 },
                 caption: '04 · Section List에서 SEL로 고르면 오른쪽 Preview가 따라갑니다.'
             },
@@ -3995,12 +4104,18 @@
                 primary: {
                     src: GENNX_DETAIL_SRC,
                     alt: 'BestoDesigner Detail 대화상자 — H+U 검토서',
-                    label: 'Detail… — 검토서'
+                    label: 'Detail… — 검토서',
+                    highlights: [
+                        { left: 3.5, top: 8.0, width: 93.0, height: 46.0, label: 'Detail… 검토 요약', labelPos: 'inside' }
+                    ]
                 },
                 secondary: {
                     src: GENNX_DESIGN_SRC,
                     alt: 'BestoDesigner Design 대화상자 — H·U 치수 수정',
-                    label: 'Design… — 치수 수정'
+                    label: 'Design… — 치수 수정',
+                    highlights: [
+                        { left: 34.0, top: 88.0, width: 32.0, height: 9.5, label: 'Done으로 재계산', labelPos: 'inside' }
+                    ]
                 },
                 caption: '05 · Detail…로 검토서를 보거나 Design…에서 치수를 바꾼 뒤 Done으로 해당 행을 재계산합니다.'
             },
@@ -4008,7 +4123,11 @@
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Save와 Update List'
+                    alt: 'BestoDesigner Save와 Update List',
+                    highlights: [
+                        { left: 1.0, top: 5.5, width: 19.0, height: 86.0, label: 'Update List', labelPos: 'inside' },
+                        { left: 54.2, top: 91.2, width: 5.8, height: 6.5, label: 'Save', labelPos: 'below' }
+                    ]
                 },
                 caption: '06 · Save로 After ID·Name을 확인한 뒤 Update List(왼쪽)에 설계를 쌓습니다.'
             },
@@ -4016,11 +4135,38 @@
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Update List — Change로 gen 반영'
+                    alt: 'BestoDesigner Update List — Change로 gen 반영',
+                    highlights: [
+                        { left: 15.5, top: 91.2, width: 5.5, height: 6.5, label: 'Change', labelPos: 'below' }
+                    ]
                 },
                 caption: '07 · Update List 하단 Change로 목록 전체를 gen에 반영합니다. 반영된 행은 목록에서 제거됩니다.'
             }
         };
+
+        function renderGennxHotspots(container, highlights) {
+            if (!container) return;
+            container.innerHTML = '';
+            const list = Array.isArray(highlights) ? highlights : [];
+            container.setAttribute('data-multi', list.length > 1 ? 'true' : 'false');
+
+            list.forEach(function(box) {
+                const el = document.createElement('div');
+                el.className = 'gennx-step-hotspot';
+                el.style.left = box.left + '%';
+                el.style.top = box.top + '%';
+                el.style.width = box.width + '%';
+                el.style.height = box.height + '%';
+                if (box.labelPos) el.setAttribute('data-label-pos', box.labelPos);
+                if (box.label) {
+                    const label = document.createElement('span');
+                    label.className = 'gennx-step-hotspot__label';
+                    label.textContent = box.label;
+                    el.appendChild(label);
+                }
+                container.appendChild(el);
+            });
+        }
 
         function selectGennxStep(stepId) {
             const shot = GENNX_STEP_SHOTS[stepId];
@@ -4039,6 +4185,8 @@
             const secondaryImg = document.getElementById('gennx-step-img-secondary');
             const primaryLabel = document.getElementById('gennx-step-label-primary');
             const secondaryLabel = document.getElementById('gennx-step-label-secondary');
+            const primaryHotspots = document.getElementById('gennx-step-hotspots-primary');
+            const secondaryHotspots = document.getElementById('gennx-step-hotspots-secondary');
             const caption = document.getElementById('gennx-step-caption');
             if (!panel || !media || !primaryImg || !caption) return;
 
@@ -4067,6 +4215,9 @@
             if (secondaryLabel) {
                 secondaryLabel.textContent = (shot.secondary && shot.secondary.label) || '';
             }
+
+            renderGennxHotspots(primaryHotspots, shot.primary.highlights);
+            renderGennxHotspots(secondaryHotspots, shot.secondary && shot.secondary.highlights);
 
             caption.textContent = shot.caption;
         }
