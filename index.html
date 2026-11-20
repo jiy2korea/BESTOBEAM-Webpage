@@ -2045,22 +2045,22 @@
             <p id="gennx-subhead" class="section-subhead">BestoDesigner. MIDAS gen 안에서 단면을 찾고, 검토한 뒤, 모델에 반영합니다.</p>
 
             <div class="technical-box">
-                <h2>플러그인이 하는 일</h2>
-                <p>gen의 단면·부재·하중을 읽어 옵니다. 계산은 파이썬 서버가 수행하고, 화면에서 결과를 검토합니다. 최적 단면은 <strong>Search Satisfied Section</strong>으로 검색합니다.</p>
+                <h2 id="gennx-what-title">플러그인이 하는 일</h2>
+                <p id="gennx-what-desc">gen의 단면·부재·하중을 읽어 옵니다. 계산은 파이썬 서버가 수행하고, 화면에서 결과를 검토합니다. 최적 단면은 <strong>Search Satisfied Section</strong>으로 검색합니다.</p>
                 <ul>
-                    <li><strong>Search:</strong> 조건을 만족하는 합성 H+U 단면을 찾습니다.</li>
-                    <li><strong>Review:</strong> Preview·Detail로 검토 결과를 확인합니다.</li>
-                    <li><strong>Apply:</strong> Save로 Update List에 쌓고, Change로 gen 모델에 반영합니다.</li>
+                    <li id="gennx-what-search"><strong>Search:</strong> 조건을 만족하는 합성 H+U 단면을 찾습니다.</li>
+                    <li id="gennx-what-review"><strong>Review:</strong> Preview·Detail로 검토 결과를 확인합니다.</li>
+                    <li id="gennx-what-apply"><strong>Apply:</strong> Save로 Update List에 쌓고, Change로 gen 모델에 반영합니다.</li>
                 </ul>
             </div>
 
             <div class="technical-box">
-                <h2>화면은 세 칸으로 나뉩니다</h2>
-                <p>왼쪽 <strong>Update List</strong>, 가운데 <strong>Design</strong>, 오른쪽 <strong>Preview</strong>입니다. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
+                <h2 id="gennx-pane-title">화면은 세 칸으로 나뉩니다</h2>
+                <p id="gennx-pane-desc">왼쪽 <strong>Update List</strong>, 가운데 <strong>Design</strong>, 오른쪽 <strong>Preview</strong>입니다. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.</p>
                 <ul>
-                    <li><strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). 하단은 PDF 저장, Delete, Change.</li>
-                    <li><strong>Design:</strong> Section / Member 탭, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.</li>
-                    <li><strong>Preview:</strong> Section List에서 고른 단면의 이름과 검토 요약.</li>
+                    <li id="gennx-pane-list"><strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). 하단은 PDF 저장, Delete, Change.</li>
+                    <li id="gennx-pane-design"><strong>Design:</strong> Section / Member 탭, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.</li>
+                    <li id="gennx-pane-preview"><strong>Preview:</strong> Section List에서 고른 단면의 이름과 검토 요약.</li>
                 </ul>
             </div>
             <div class="product-image-container gennx-pane-overview">
@@ -2070,13 +2070,13 @@
                         alt="BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸" class="product-image">
                     <div class="gennx-pane-overview__zones" aria-hidden="true">
                         <div class="gennx-pane-overview__zone" data-pane="update-list">
-                            <span class="gennx-pane-overview__label">Update List</span>
+                            <span class="gennx-pane-overview__label" id="gennx-zone-list">Update List</span>
                         </div>
                         <div class="gennx-pane-overview__zone" data-pane="design">
-                            <span class="gennx-pane-overview__label">Design</span>
+                            <span class="gennx-pane-overview__label" id="gennx-zone-design">Design</span>
                         </div>
                         <div class="gennx-pane-overview__zone" data-pane="preview">
-                            <span class="gennx-pane-overview__label">Preview</span>
+                            <span class="gennx-pane-overview__label" id="gennx-zone-preview">Preview</span>
                         </div>
                         <div class="gennx-pane-overview__divider" data-at="lm"></div>
                         <div class="gennx-pane-overview__divider" data-at="mr"></div>
@@ -2085,40 +2085,40 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h2>검색부터 Change까지</h2>
-                <p>단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다. 각 단계를 누르면 해당 화면이 아래에 보입니다.</p>
+                <h2 id="gennx-flow-title">검색부터 Change까지</h2>
+                <p id="gennx-flow-desc">단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다. 각 단계를 누르면 해당 화면이 아래에 보입니다.</p>
                 <div class="process-flow" id="gennx-process-flow" role="tablist" aria-label="검색부터 Change까지 단계">
                     <button type="button" class="flow-step is-active" role="tab" id="gennx-step-01" aria-selected="true" aria-controls="gennx-step-preview" data-gennx-step="01">
                         <span class="step-number">01</span>
-                        <p>대상 고르기 — Section 드롭다운 또는 Member에서 Refresh</p>
+                        <p id="gennx-step-01-text">대상 고르기 — Section 드롭다운 또는 Member에서 Refresh</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-02" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="02">
                         <span class="step-number">02</span>
-                        <p>Additional Informations 확인 (철근·전단연결재·높이·재료 등)</p>
+                        <p id="gennx-step-02-text">Additional Informations 확인 (철근·전단연결재·높이·재료 등)</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-03" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="03">
                         <span class="step-number">03</span>
-                        <p>Search Satisfied Section으로 조건 만족 단면 검색</p>
+                        <p id="gennx-step-03-text">Search Satisfied Section으로 조건 만족 단면 검색</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-04" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="04">
                         <span class="step-number">04</span>
-                        <p>Section List에서 SEL로 선택 — Preview가 따름</p>
+                        <p id="gennx-step-04-text">Section List에서 SEL로 선택 — Preview가 따름</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-05" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="05">
                         <span class="step-number">05</span>
-                        <p>필요 시 Detail… / Design… 후 Done으로 해당 행 재계산</p>
+                        <p id="gennx-step-05-text">필요 시 Detail… / Design… 후 Done으로 해당 행 재계산</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-06" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="06">
                         <span class="step-number">06</span>
-                        <p>Save로 After ID·Name 확인 → Update List 적재</p>
+                        <p id="gennx-step-06-text">Save로 After ID·Name 확인 → Update List 적재</p>
                     </button>
                     <button type="button" class="flow-step" role="tab" id="gennx-step-07" aria-selected="false" aria-controls="gennx-step-preview" data-gennx-step="07">
                         <span class="step-number">07</span>
-                        <p>Change로 목록 전체를 gen에 반영 (반영 행은 목록에서 제거)</p>
+                        <p id="gennx-step-07-text">Change로 목록 전체를 gen에 반영 (반영 행은 목록에서 제거)</p>
                     </button>
                 </div>
                 <div class="gennx-step-preview" id="gennx-step-preview" role="tabpanel" aria-labelledby="gennx-step-01">
-                    <p class="gennx-step-preview__hint">단계를 클릭하면 해당 UI 영역이 강조됩니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
+                    <p class="gennx-step-preview__hint" id="gennx-step-hint">단계를 클릭하면 해당 UI 영역이 강조됩니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
                     <div class="gennx-step-preview__media" data-mode="single">
                         <figure class="gennx-step-preview__item gennx-step-preview__item--primary">
                             <div class="gennx-step-preview__frame">
@@ -2148,31 +2148,31 @@
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h2>Section 탭과 Member 탭</h2>
-                <p>탭을 바꾸거나 단면을 다시 고르면 검색 결과만 비워지고, Update List는 남습니다.</p>
+                <h2 id="gennx-tabs-title">Section 탭과 Member 탭</h2>
+                <p id="gennx-tabs-desc">탭을 바꾸거나 단면을 다시 고르면 검색 결과만 비워지고, Update List는 남습니다.</p>
                 <ul>
-                    <li><strong>Section 탭:</strong> 단면 하나. Before/After 한 행. Save에 After ID·Name이 들어 있고, Change는 그 After ID의 단면 정의를 바꾸며 해당 ID 부재에 자중을 넣습니다.</li>
-                    <li><strong>Member 탭:</strong> 고른 부재 기준. 단면이 여러 종류면 하중은 최대값. Before 단면마다 행이 생기고 After는 합성단면 하나. Save의 After ID·Name은 비어 있고, Change는 Save 당시 부재 단면을 After로 바꿉니다.</li>
+                    <li id="gennx-tabs-section"><strong>Section 탭:</strong> 단면 하나. Before/After 한 행. Save에 After ID·Name이 들어 있고, Change는 그 After ID의 단면 정의를 바꾸며 해당 ID 부재에 자중을 넣습니다.</li>
+                    <li id="gennx-tabs-member"><strong>Member 탭:</strong> 고른 부재 기준. 단면이 여러 종류면 하중은 최대값. Before 단면마다 행이 생기고 After는 합성단면 하나. Save의 After ID·Name은 비어 있고, Change는 Save 당시 부재 단면을 After로 바꿉니다.</li>
                 </ul>
             </div>
 
             <div class="technical-box" style="margin-top: 50px;">
-                <h2>Detail과 Design</h2>
-                <p><strong>Detail…</strong>은 고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 휨·전단·처짐·진동을 보여 줍니다.</p>
-                <p><strong>Design…</strong>은 고른 행의 H·U 치수를 바꾸는 창입니다. Done은 그 행만 다시 계산하고, 창의 Detail은 바꾼 치수의 검토서를 엽니다.</p>
+                <h2 id="gennx-dd-title">Detail과 Design</h2>
+                <p id="gennx-dd-detail"><strong>Detail…</strong>은 고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 휨·전단·처짐·진동을 보여 줍니다.</p>
+                <p id="gennx-dd-design"><strong>Design…</strong>은 고른 행의 H·U 치수를 바꾸는 창입니다. Done은 그 행만 다시 계산하고, 창의 Detail은 바꾼 치수의 검토서를 엽니다.</p>
             </div>
             <div class="plugin-image-pair">
                 <div class="product-image-container">
                     <img loading="lazy" width="601" height="681" decoding="async"
                         src="assets/images/plugin/detail.jpg"
                         alt="BestoDesigner Detail 대화상자 — H+U 검토서" class="product-image">
-                    <figcaption>Detail… — 검토서</figcaption>
+                    <figcaption id="gennx-fig-detail">Detail… — 검토서</figcaption>
                 </div>
                 <div class="product-image-container">
                     <img loading="lazy" width="308" height="487" decoding="async"
                         src="assets/images/plugin/design.jpg"
                         alt="BestoDesigner Design 대화상자 — H·U 치수 수정" class="product-image">
-                    <figcaption>Design… — 치수 수정</figcaption>
+                    <figcaption id="gennx-fig-design">Design… — 치수 수정</figcaption>
                 </div>
             </div>
         </div>
@@ -3133,6 +3133,59 @@
                 'princ-proc-3': '3. BESTOBEAM 최적 단면(H-U 전환점) 산정 로직 적용',
                 'princ-proc-4': '4. 구조 검토서 생성 및 상세 설계 도면 작성',
 
+                'gennx-title': '마이다스 GEN NX 플러그인: <br>합성 H+U 단면 검색과 반영.',
+                'gennx-subhead': 'BestoDesigner. MIDAS gen 안에서 단면을 찾고, 검토한 뒤, 모델에 반영합니다.',
+                'gennx-what-title': '플러그인이 하는 일',
+                'gennx-what-desc': 'gen의 단면·부재·하중을 읽어 옵니다. 계산은 파이썬 서버가 수행하고, 화면에서 결과를 검토합니다. 최적 단면은 <strong>Search Satisfied Section</strong>으로 검색합니다.',
+                'gennx-what-search': '<strong>Search:</strong> 조건을 만족하는 합성 H+U 단면을 찾습니다.',
+                'gennx-what-review': '<strong>Review:</strong> Preview·Detail로 검토 결과를 확인합니다.',
+                'gennx-what-apply': '<strong>Apply:</strong> Save로 Update List에 쌓고, Change로 gen 모델에 반영합니다.',
+                'gennx-pane-title': '화면은 세 칸으로 나뉩니다',
+                'gennx-pane-desc': '왼쪽 <strong>Update List</strong>, 가운데 <strong>Design</strong>, 오른쪽 <strong>Preview</strong>입니다. 검색 결과는 Section List에, Save한 설계는 Update List에 쌓입니다.',
+                'gennx-pane-list': '<strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). 하단은 PDF 저장, Delete, Change.',
+                'gennx-pane-design': '<strong>Design:</strong> Section / Member 탭, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.',
+                'gennx-pane-preview': '<strong>Preview:</strong> Section List에서 고른 단면의 이름과 검토 요약.',
+                'gennx-zone-list': 'Update List',
+                'gennx-zone-design': 'Design',
+                'gennx-zone-preview': 'Preview',
+                'gennx-flow-title': '검색부터 Change까지',
+                'gennx-flow-desc': '단면을 고르고 검색한 뒤, List에 담고 Save → Change로 gen에 반영합니다. 각 단계를 누르면 해당 화면이 아래에 보입니다.',
+                'gennx-flow-aria': '검색부터 Change까지 단계',
+                'gennx-step-01-text': '대상 고르기 — Section 드롭다운 또는 Member에서 Refresh',
+                'gennx-step-02-text': 'Additional Informations 확인 (철근·전단연결재·높이·재료 등)',
+                'gennx-step-03-text': 'Search Satisfied Section으로 조건 만족 단면 검색',
+                'gennx-step-04-text': 'Section List에서 SEL로 선택 — Preview가 따름',
+                'gennx-step-05-text': '필요 시 Detail… / Design… 후 Done으로 해당 행 재계산',
+                'gennx-step-06-text': 'Save로 After ID·Name 확인 → Update List 적재',
+                'gennx-step-07-text': 'Change로 목록 전체를 gen에 반영 (반영 행은 목록에서 제거)',
+                'gennx-step-hint': '단계를 클릭하면 해당 UI 영역이 강조됩니다. 이미지를 누르면 크게 볼 수 있습니다.',
+                'gennx-cap-01': '01 · 메인 세 칸 화면에서 Section 드롭다운 또는 Member Refresh로 대상을 고릅니다.',
+                'gennx-cap-02': '02 · Design 칸 상단 Additional Informations에서 철근·전단연결재·높이·재료 등을 확인합니다.',
+                'gennx-cap-03': '03 · Search Satisfied Section으로 조건을 만족하는 합성 H+U 단면을 검색합니다.',
+                'gennx-cap-04': '04 · Section List에서 SEL로 고르면 오른쪽 Preview가 따라갑니다.',
+                'gennx-cap-05': '05 · Detail…로 검토서를 보거나 Design…에서 치수를 바꾼 뒤 Done으로 해당 행을 재계산합니다.',
+                'gennx-cap-06': '06 · Save로 After ID·Name을 확인한 뒤 Update List(왼쪽)에 설계를 쌓습니다.',
+                'gennx-cap-07': '07 · Update List 하단 Change로 목록 전체를 gen에 반영합니다. 반영된 행은 목록에서 제거됩니다.',
+                'gennx-fig-detail': 'Detail… — 검토서',
+                'gennx-fig-design': 'Design… — 치수 수정',
+                'gennx-hs-detail-summary': 'Detail… 검토 요약',
+                'gennx-hs-done': 'Done으로 재계산',
+                'gennx-alt-full': 'BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸',
+                'gennx-alt-additional': 'BestoDesigner Design 칸 — Additional Informations',
+                'gennx-alt-search': 'BestoDesigner Design 칸 — Search Satisfied Section',
+                'gennx-alt-list-preview': 'BestoDesigner Section List와 Preview',
+                'gennx-alt-detail': 'BestoDesigner Detail 대화상자 — H+U 검토서',
+                'gennx-alt-design': 'BestoDesigner Design 대화상자 — H·U 치수 수정',
+                'gennx-alt-save': 'BestoDesigner Save와 Update List',
+                'gennx-alt-change': 'BestoDesigner Update List — Change로 gen 반영',
+                'gennx-tabs-title': 'Section 탭과 Member 탭',
+                'gennx-tabs-desc': '탭을 바꾸거나 단면을 다시 고르면 검색 결과만 비워지고, Update List는 남습니다.',
+                'gennx-tabs-section': '<strong>Section 탭:</strong> 단면 하나. Before/After 한 행. Save에 After ID·Name이 들어 있고, Change는 그 After ID의 단면 정의를 바꾸며 해당 ID 부재에 자중을 넣습니다.',
+                'gennx-tabs-member': '<strong>Member 탭:</strong> 고른 부재 기준. 단면이 여러 종류면 하중은 최대값. Before 단면마다 행이 생기고 After는 합성단면 하나. Save의 After ID·Name은 비어 있고, Change는 Save 당시 부재 단면을 After로 바꿉니다.',
+                'gennx-dd-title': 'Detail과 Design',
+                'gennx-dd-detail': '<strong>Detail…</strong>은 고른 H+U의 검토서입니다. 시공 단계와 합성 단계의 휨·전단·처짐·진동을 보여 줍니다.',
+                'gennx-dd-design': '<strong>Design…</strong>은 고른 행의 H·U 치수를 바꾸는 창입니다. Done은 그 행만 다시 계산하고, 창의 Detail은 바꾼 치수의 검토서를 엽니다.',
+
                 'test-title': '실증적 검증: <br>RIST/KOLAS 인증 실험 결과.',
                 'test-subhead': '공인 기관의 엄격한 테스트를 통해 구조 성능과 안전성을 입증했습니다.',
                 'test-bend-title': '휨 성능 실험 (Bending Performance)',
@@ -3378,6 +3431,59 @@
                 'princ-proc-3': '3. Application of BESTOBEAM optimal section (H-U transition) logic.',
                 'princ-proc-4': '4. Generation of structural reports and detailed design drawings.',
 
+                'gennx-title': 'MIDAS GEN NX Plugin: <br>Find and apply composite H+U sections.',
+                'gennx-subhead': 'BestoDesigner. Inside MIDAS gen, find a section, review it, then apply it to the model.',
+                'gennx-what-title': 'What the plugin does',
+                'gennx-what-desc': 'It reads sections, members, and loads from gen. A Python server runs the calculations, and you review results on screen. Optimal sections are found with <strong>Search Satisfied Section</strong>.',
+                'gennx-what-search': '<strong>Search:</strong> Find composite H+U sections that meet the criteria.',
+                'gennx-what-review': '<strong>Review:</strong> Check review results in Preview and Detail.',
+                'gennx-what-apply': '<strong>Apply:</strong> Save stacks designs into Update List; Change writes them to the gen model.',
+                'gennx-pane-title': 'The screen has three panes',
+                'gennx-pane-desc': 'Left <strong>Update List</strong>, center <strong>Design</strong>, right <strong>Preview</strong>. Search results go to Section List; saved designs go to Update List.',
+                'gennx-pane-list': '<strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). Bottom: Save PDF, Delete, Change.',
+                'gennx-pane-design': '<strong>Design:</strong> Section / Member tabs, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.',
+                'gennx-pane-preview': '<strong>Preview:</strong> Name and review summary of the section selected in Section List.',
+                'gennx-zone-list': 'Update List',
+                'gennx-zone-design': 'Design',
+                'gennx-zone-preview': 'Preview',
+                'gennx-flow-title': 'From search to Change',
+                'gennx-flow-desc': 'Pick a section, search, add it to the List, then Save → Change to write it into gen. Click each step to see that screen below.',
+                'gennx-flow-aria': 'Steps from search to Change',
+                'gennx-step-01-text': 'Pick a target — Section dropdown or Refresh in Member',
+                'gennx-step-02-text': 'Check Additional Informations (rebar, shear connectors, height, materials, etc.)',
+                'gennx-step-03-text': 'Search for satisfying sections with Search Satisfied Section',
+                'gennx-step-04-text': 'Select with SEL in Section List — Preview follows',
+                'gennx-step-05-text': 'If needed, use Detail… / Design… then Done to recalculate that row',
+                'gennx-step-06-text': 'Confirm After ID·Name with Save → add to Update List',
+                'gennx-step-07-text': 'Apply the whole list to gen with Change (applied rows leave the list)',
+                'gennx-step-hint': 'Click a step to highlight that UI area. Click the image to enlarge it.',
+                'gennx-cap-01': '01 · On the three-pane main screen, pick a target with the Section dropdown or Member Refresh.',
+                'gennx-cap-02': '02 · Check rebar, shear connectors, height, materials, and more in Additional Informations at the top of Design.',
+                'gennx-cap-03': '03 · Search for composite H+U sections that meet the criteria with Search Satisfied Section.',
+                'gennx-cap-04': '04 · Selecting with SEL in Section List updates Preview on the right.',
+                'gennx-cap-05': '05 · Open the review with Detail…, or change dimensions in Design… and recalculate that row with Done.',
+                'gennx-cap-06': '06 · Confirm After ID·Name with Save, then stack the design in Update List (left).',
+                'gennx-cap-07': '07 · Change at the bottom of Update List writes the whole list into gen. Applied rows are removed from the list.',
+                'gennx-fig-detail': 'Detail… — Review report',
+                'gennx-fig-design': 'Design… — Edit dimensions',
+                'gennx-hs-detail-summary': 'Detail… review summary',
+                'gennx-hs-done': 'Recalculate with Done',
+                'gennx-alt-full': 'BestoDesigner main screen — Update List, Design, Preview panes',
+                'gennx-alt-additional': 'BestoDesigner Design pane — Additional Informations',
+                'gennx-alt-search': 'BestoDesigner Design pane — Search Satisfied Section',
+                'gennx-alt-list-preview': 'BestoDesigner Section List and Preview',
+                'gennx-alt-detail': 'BestoDesigner Detail dialog — H+U review report',
+                'gennx-alt-design': 'BestoDesigner Design dialog — edit H·U dimensions',
+                'gennx-alt-save': 'BestoDesigner Save and Update List',
+                'gennx-alt-change': 'BestoDesigner Update List — apply to gen with Change',
+                'gennx-tabs-title': 'Section tab and Member tab',
+                'gennx-tabs-desc': 'Switching tabs or reselecting a section clears search results only; Update List remains.',
+                'gennx-tabs-section': '<strong>Section tab:</strong> One section. One Before/After row. Save includes After ID·Name; Change updates that After ID’s section definition and applies self-weight to members with that ID.',
+                'gennx-tabs-member': '<strong>Member tab:</strong> Based on selected members. If sections vary, loads use the maximum. One Before row per section; After is one composite section. Save leaves After ID·Name empty; Change replaces member sections from that Save with After.',
+                'gennx-dd-title': 'Detail and Design',
+                'gennx-dd-detail': '<strong>Detail…</strong> is the review report for the selected H+U. It shows bending, shear, deflection, and vibration for construction and composite stages.',
+                'gennx-dd-design': '<strong>Design…</strong> edits H·U dimensions for the selected row. Done recalculates that row only; Detail in the dialog opens the review for the changed dimensions.',
+
                 'test-title': 'Verification: <br>RIST/KOLAS Certified Test Results.',
                 'test-subhead': 'Structural performance and safety proven through rigorous testing by authorized institutions.',
                 'test-bend-title': 'Bending Performance Test',
@@ -3617,6 +3723,59 @@
                 'princ-proc-2': '2. 计算各位置最大弯矩和剪力',
                 'princ-proc-3': '3. 应用BESTOBEAM最优截面（H-U转换点）计算逻辑',
                 'princ-proc-4': '4. 生成结构审查报告和详细设计图纸',
+
+                'gennx-title': 'MIDAS GEN NX 插件：<br>检索并应用组合 H+U 截面。',
+                'gennx-subhead': 'BestoDesigner。在 MIDAS gen 中查找截面、审查结果，再写回模型。',
+                'gennx-what-title': '插件做什么',
+                'gennx-what-desc': '读取 gen 中的截面、构件与荷载。计算由 Python 服务器完成，您在界面中审查结果。最优截面通过 <strong>Search Satisfied Section</strong> 检索。',
+                'gennx-what-search': '<strong>Search:</strong> 查找满足条件的组合 H+U 截面。',
+                'gennx-what-review': '<strong>Review:</strong> 在 Preview·Detail 中确认审查结果。',
+                'gennx-what-apply': '<strong>Apply:</strong> 用 Save 堆入 Update List，再用 Change 写回 gen 模型。',
+                'gennx-pane-title': '界面分为三栏',
+                'gennx-pane-desc': '左侧 <strong>Update List</strong>，中间 <strong>Design</strong>，右侧 <strong>Preview</strong>。检索结果在 Section List，Save 的设计进入 Update List。',
+                'gennx-pane-list': '<strong>Update List:</strong> SEL、Before(ID, Name)、After(ID, Name)。底部为 PDF 保存、Delete、Change。',
+                'gennx-pane-design': '<strong>Design:</strong> Section / Member 选项卡、Additional Informations、Search Satisfied Section、Section List、Detail… / Design… / Save / Close。',
+                'gennx-pane-preview': '<strong>Preview:</strong> Section List 中所选截面的名称与审查摘要。',
+                'gennx-zone-list': 'Update List',
+                'gennx-zone-design': 'Design',
+                'gennx-zone-preview': 'Preview',
+                'gennx-flow-title': '从检索到 Change',
+                'gennx-flow-desc': '选定截面并检索后，放入 List，再通过 Save → Change 写回 gen。点击各步骤可在下方查看对应画面。',
+                'gennx-flow-aria': '从检索到 Change 的步骤',
+                'gennx-step-01-text': '选择对象 — Section 下拉菜单或 Member 中的 Refresh',
+                'gennx-step-02-text': '确认 Additional Informations（钢筋、抗剪连接件、高度、材料等）',
+                'gennx-step-03-text': '用 Search Satisfied Section 检索满足条件的截面',
+                'gennx-step-04-text': '在 Section List 中用 SEL 选择 — Preview 随之更新',
+                'gennx-step-05-text': '必要时使用 Detail… / Design…，再以 Done 重新计算该行',
+                'gennx-step-06-text': '用 Save 确认 After ID·Name → 写入 Update List',
+                'gennx-step-07-text': '用 Change 将整表写回 gen（已应用行会从列表移除）',
+                'gennx-step-hint': '点击步骤即可高亮对应 UI 区域。点击图片可放大查看。',
+                'gennx-cap-01': '01 · 在三栏主界面中，用 Section 下拉菜单或 Member Refresh 选择对象。',
+                'gennx-cap-02': '02 · 在 Design 栏上方 Additional Informations 中确认钢筋、抗剪连接件、高度、材料等。',
+                'gennx-cap-03': '03 · 用 Search Satisfied Section 检索满足条件的组合 H+U 截面。',
+                'gennx-cap-04': '04 · 在 Section List 中用 SEL 选择后，右侧 Preview 会跟随更新。',
+                'gennx-cap-05': '05 · 用 Detail… 查看审查报告，或在 Design… 中修改尺寸后用 Done 重新计算该行。',
+                'gennx-cap-06': '06 · 用 Save 确认 After ID·Name 后，将设计堆入左侧 Update List。',
+                'gennx-cap-07': '07 · 用 Update List 底部的 Change 将整表写回 gen。已应用行会从列表移除。',
+                'gennx-fig-detail': 'Detail… — 审查报告',
+                'gennx-fig-design': 'Design… — 修改尺寸',
+                'gennx-hs-detail-summary': 'Detail… 审查摘要',
+                'gennx-hs-done': '用 Done 重新计算',
+                'gennx-alt-full': 'BestoDesigner 主界面 — Update List、Design、Preview 三栏',
+                'gennx-alt-additional': 'BestoDesigner Design 栏 — Additional Informations',
+                'gennx-alt-search': 'BestoDesigner Design 栏 — Search Satisfied Section',
+                'gennx-alt-list-preview': 'BestoDesigner Section List 与 Preview',
+                'gennx-alt-detail': 'BestoDesigner Detail 对话框 — H+U 审查报告',
+                'gennx-alt-design': 'BestoDesigner Design 对话框 — 修改 H·U 尺寸',
+                'gennx-alt-save': 'BestoDesigner Save 与 Update List',
+                'gennx-alt-change': 'BestoDesigner Update List — 用 Change 写回 gen',
+                'gennx-tabs-title': 'Section 选项卡与 Member 选项卡',
+                'gennx-tabs-desc': '切换选项卡或重新选择截面时，仅清空检索结果，Update List 保留。',
+                'gennx-tabs-section': '<strong>Section 选项卡:</strong> 一个截面。一行 Before/After。Save 含 After ID·Name；Change 更新该 After ID 的截面定义，并为该 ID 构件施加自重。',
+                'gennx-tabs-member': '<strong>Member 选项卡:</strong> 以所选构件为准。截面种类多时取最大荷载。每个 Before 截面一行，After 为一个组合截面。Save 的 After ID·Name 为空；Change 将 Save 当时的构件截面替换为 After。',
+                'gennx-dd-title': 'Detail 与 Design',
+                'gennx-dd-detail': '<strong>Detail…</strong> 是所选 H+U 的审查报告。显示施工阶段与组合阶段的弯曲、剪切、挠度与振动。',
+                'gennx-dd-design': '<strong>Design…</strong> 是修改所选行 H·U 尺寸的窗口。Done 仅重新计算该行；窗口中的 Detail 打开修改后尺寸的审查报告。',
 
                 'test-title': '实证验证：<br>RIST/KOLAS 认证试验结果。',
                 'test-subhead': '通过权威机构的严格测试，验证了结构性能和安全性。',
@@ -3858,6 +4017,59 @@
                 'princ-proc-2': '2. Tính toán mô-men và lực cắt tối đa tại từng vị trí',
                 'princ-proc-3': '3. Áp dụng logic tính toán tiết diện tối ưu BESTOBEAM (điểm chuyển đổi H-U)',
                 'princ-proc-4': '4. Lập báo cáo kiểm tra cấu trúc và bản vẽ thiết kế chi tiết',
+
+                'gennx-title': 'Plugin MIDAS GEN NX: <br>Tìm và áp dụng tiết diện tổ hợp H+U.',
+                'gennx-subhead': 'BestoDesigner. Trong MIDAS gen, tìm tiết diện, xem xét, rồi áp dụng vào mô hình.',
+                'gennx-what-title': 'Plugin làm gì',
+                'gennx-what-desc': 'Đọc tiết diện, cấu kiện và tải trọng từ gen. Máy chủ Python thực hiện tính toán, bạn xem kết quả trên màn hình. Tiết diện tối ưu được tìm bằng <strong>Search Satisfied Section</strong>.',
+                'gennx-what-search': '<strong>Search:</strong> Tìm tiết diện tổ hợp H+U thỏa điều kiện.',
+                'gennx-what-review': '<strong>Review:</strong> Kiểm tra kết quả trong Preview·Detail.',
+                'gennx-what-apply': '<strong>Apply:</strong> Save đưa thiết kế vào Update List; Change ghi vào mô hình gen.',
+                'gennx-pane-title': 'Màn hình chia ba cột',
+                'gennx-pane-desc': 'Trái <strong>Update List</strong>, giữa <strong>Design</strong>, phải <strong>Preview</strong>. Kết quả tìm kiếm vào Section List; thiết kế đã Save vào Update List.',
+                'gennx-pane-list': '<strong>Update List:</strong> SEL, Before(ID, Name), After(ID, Name). Dưới cùng: lưu PDF, Delete, Change.',
+                'gennx-pane-design': '<strong>Design:</strong> Tab Section / Member, Additional Informations, Search Satisfied Section, Section List, Detail… / Design… / Save / Close.',
+                'gennx-pane-preview': '<strong>Preview:</strong> Tên và tóm tắt kiểm tra của tiết diện chọn trong Section List.',
+                'gennx-zone-list': 'Update List',
+                'gennx-zone-design': 'Design',
+                'gennx-zone-preview': 'Preview',
+                'gennx-flow-title': 'Từ tìm kiếm đến Change',
+                'gennx-flow-desc': 'Chọn tiết diện, tìm kiếm, đưa vào List, rồi Save → Change để ghi vào gen. Bấm từng bước để xem màn hình bên dưới.',
+                'gennx-flow-aria': 'Các bước từ tìm kiếm đến Change',
+                'gennx-step-01-text': 'Chọn đối tượng — dropdown Section hoặc Refresh trong Member',
+                'gennx-step-02-text': 'Kiểm tra Additional Informations (cốt thép, liên kết cắt, chiều cao, vật liệu…)',
+                'gennx-step-03-text': 'Tìm tiết diện thỏa điều kiện bằng Search Satisfied Section',
+                'gennx-step-04-text': 'Chọn bằng SEL trong Section List — Preview theo sau',
+                'gennx-step-05-text': 'Nếu cần, dùng Detail… / Design… rồi Done để tính lại hàng đó',
+                'gennx-step-06-text': 'Xác nhận After ID·Name bằng Save → đưa vào Update List',
+                'gennx-step-07-text': 'Áp dụng cả danh sách vào gen bằng Change (hàng đã áp dụng bị xóa khỏi list)',
+                'gennx-step-hint': 'Bấm một bước để tô sáng vùng UI tương ứng. Bấm ảnh để phóng to.',
+                'gennx-cap-01': '01 · Trên màn hình ba cột, chọn đối tượng bằng dropdown Section hoặc Member Refresh.',
+                'gennx-cap-02': '02 · Kiểm tra cốt thép, liên kết cắt, chiều cao, vật liệu… trong Additional Informations phía trên Design.',
+                'gennx-cap-03': '03 · Tìm tiết diện tổ hợp H+U thỏa điều kiện bằng Search Satisfied Section.',
+                'gennx-cap-04': '04 · Chọn bằng SEL trong Section List thì Preview bên phải cập nhật theo.',
+                'gennx-cap-05': '05 · Xem báo cáo bằng Detail…, hoặc đổi kích thước trong Design… rồi tính lại hàng đó bằng Done.',
+                'gennx-cap-06': '06 · Xác nhận After ID·Name bằng Save, rồi xếp thiết kế vào Update List (trái).',
+                'gennx-cap-07': '07 · Change ở cuối Update List ghi cả danh sách vào gen. Hàng đã áp dụng bị xóa khỏi list.',
+                'gennx-fig-detail': 'Detail… — Báo cáo kiểm tra',
+                'gennx-fig-design': 'Design… — Sửa kích thước',
+                'gennx-hs-detail-summary': 'Detail… tóm tắt kiểm tra',
+                'gennx-hs-done': 'Tính lại bằng Done',
+                'gennx-alt-full': 'Màn hình chính BestoDesigner — ba cột Update List, Design, Preview',
+                'gennx-alt-additional': 'Cột Design BestoDesigner — Additional Informations',
+                'gennx-alt-search': 'Cột Design BestoDesigner — Search Satisfied Section',
+                'gennx-alt-list-preview': 'Section List và Preview của BestoDesigner',
+                'gennx-alt-detail': 'Hộp thoại Detail BestoDesigner — báo cáo kiểm tra H+U',
+                'gennx-alt-design': 'Hộp thoại Design BestoDesigner — sửa kích thước H·U',
+                'gennx-alt-save': 'Save và Update List của BestoDesigner',
+                'gennx-alt-change': 'Update List BestoDesigner — áp dụng vào gen bằng Change',
+                'gennx-tabs-title': 'Tab Section và tab Member',
+                'gennx-tabs-desc': 'Đổi tab hoặc chọn lại tiết diện chỉ xóa kết quả tìm kiếm; Update List vẫn giữ.',
+                'gennx-tabs-section': '<strong>Tab Section:</strong> Một tiết diện. Một hàng Before/After. Save có After ID·Name; Change đổi định nghĩa tiết diện của After ID đó và gán tự trọng cho cấu kiện cùng ID.',
+                'gennx-tabs-member': '<strong>Tab Member:</strong> Theo cấu kiện đã chọn. Nhiều loại tiết diện thì lấy tải lớn nhất. Mỗi tiết diện Before một hàng; After là một tiết diện tổ hợp. Save để trống After ID·Name; Change thay tiết diện cấu kiện lúc Save bằng After.',
+                'gennx-dd-title': 'Detail và Design',
+                'gennx-dd-detail': '<strong>Detail…</strong> là báo cáo kiểm tra của H+U đã chọn. Hiển thị uốn, cắt, võng và rung cho giai đoạn thi công và giai đoạn tổ hợp.',
+                'gennx-dd-design': '<strong>Design…</strong> là cửa sổ đổi kích thước H·U của hàng đã chọn. Done chỉ tính lại hàng đó; Detail trong cửa sổ mở báo cáo cho kích thước đã đổi.',
 
                 'test-title': 'Kiểm chứng thực tế: <br>Kết quả thử nghiệm đạt chứng nhận RIST/KOLAS.',
                 'test-subhead': 'Hiệu suất cấu trúc và tính an toàn đã được chứng minh thông qua các bài kiểm tra nghiêm ngặt của các cơ quan có thẩm quyền.',
@@ -4150,6 +4362,16 @@
                 }
             }
 
+            const gennxFlow = document.getElementById('gennx-process-flow');
+            if (gennxFlow && langData['gennx-flow-aria']) {
+                gennxFlow.setAttribute('aria-label', langData['gennx-flow-aria']);
+            }
+
+            const activeGennx = document.querySelector('#gennx-process-flow [data-gennx-step].is-active');
+            if (activeGennx) {
+                selectGennxStep(activeGennx.getAttribute('data-gennx-step'));
+            }
+
             updateMobileMenuLabel();
         }
 
@@ -4208,95 +4430,104 @@
         const GENNX_DETAIL_SRC = 'assets/images/plugin/detail.jpg';
         const GENNX_DESIGN_SRC = 'assets/images/plugin/design.jpg';
 
+        function gennxT(key, fallback) {
+            if (!key) return fallback || '';
+            const langData = translations[savedLang()] || translations.ko;
+            if (langData && langData[key] != null) return langData[key];
+            const koData = translations.ko;
+            if (koData && koData[key] != null) return koData[key];
+            return fallback || '';
+        }
+
         /* Highlight boxes: left/top/width/height as % of the screenshot (1640×789 full, dialogs separate). */
         const GENNX_STEP_SHOTS = {
             '01': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner 메인 화면 — Update List, Design, Preview 세 칸',
+                    altKey: 'gennx-alt-full',
                     highlights: [
                         { left: 21.2, top: 5.5, width: 41.5, height: 11.5, label: 'Section / Member', labelPos: 'inside' }
                     ]
                 },
-                caption: '01 · 메인 세 칸 화면에서 Section 드롭다운 또는 Member Refresh로 대상을 고릅니다.'
+                captionKey: 'gennx-cap-01'
             },
             '02': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Design 칸 — Additional Informations',
+                    altKey: 'gennx-alt-additional',
                     highlights: [
                         { left: 21.2, top: 16.5, width: 41.5, height: 24.5, label: 'Additional Informations', labelPos: 'inside' }
                     ]
                 },
-                caption: '02 · Design 칸 상단 Additional Informations에서 철근·전단연결재·높이·재료 등을 확인합니다.'
+                captionKey: 'gennx-cap-02'
             },
             '03': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Design 칸 — Search Satisfied Section',
+                    altKey: 'gennx-alt-search',
                     highlights: [
                         { left: 49.8, top: 41.0, width: 13.4, height: 6.2, label: 'Search Satisfied Section', labelPos: 'below' }
                     ]
                 },
-                caption: '03 · Search Satisfied Section으로 조건을 만족하는 합성 H+U 단면을 검색합니다.'
+                captionKey: 'gennx-cap-03'
             },
             '04': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Section List와 Preview',
+                    altKey: 'gennx-alt-list-preview',
                     highlights: [
                         { left: 21.2, top: 47.5, width: 41.5, height: 40.0, label: 'Section List · SEL', labelPos: 'inside' },
                         { left: 63.8, top: 5.5, width: 35.5, height: 87.5, label: 'Preview', labelPos: 'inside' }
                     ]
                 },
-                caption: '04 · Section List에서 SEL로 고르면 오른쪽 Preview가 따라갑니다.'
+                captionKey: 'gennx-cap-04'
             },
             '05': {
                 mode: 'pair',
                 primary: {
                     src: GENNX_DETAIL_SRC,
-                    alt: 'BestoDesigner Detail 대화상자 — H+U 검토서',
-                    label: 'Detail… — 검토서',
+                    altKey: 'gennx-alt-detail',
+                    labelKey: 'gennx-fig-detail',
                     highlights: [
-                        { left: 3.5, top: 8.0, width: 93.0, height: 46.0, label: 'Detail… 검토 요약', labelPos: 'inside' }
+                        { left: 3.5, top: 8.0, width: 93.0, height: 46.0, labelKey: 'gennx-hs-detail-summary', labelPos: 'inside' }
                     ]
                 },
                 secondary: {
                     src: GENNX_DESIGN_SRC,
-                    alt: 'BestoDesigner Design 대화상자 — H·U 치수 수정',
-                    label: 'Design… — 치수 수정',
+                    altKey: 'gennx-alt-design',
+                    labelKey: 'gennx-fig-design',
                     highlights: [
-                        { left: 34.0, top: 88.0, width: 32.0, height: 9.5, label: 'Done으로 재계산', labelPos: 'inside' }
+                        { left: 34.0, top: 88.0, width: 32.0, height: 9.5, labelKey: 'gennx-hs-done', labelPos: 'inside' }
                     ]
                 },
-                caption: '05 · Detail…로 검토서를 보거나 Design…에서 치수를 바꾼 뒤 Done으로 해당 행을 재계산합니다.'
+                captionKey: 'gennx-cap-05'
             },
             '06': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Save와 Update List',
+                    altKey: 'gennx-alt-save',
                     highlights: [
                         { left: 1.0, top: 5.5, width: 19.0, height: 86.0, label: 'Update List', labelPos: 'inside' },
                         { left: 52.5, top: 94.0, width: 4.9, height: 4.4, label: 'Save', labelPos: 'below' }
                     ]
                 },
-                caption: '06 · Save로 After ID·Name을 확인한 뒤 Update List(왼쪽)에 설계를 쌓습니다.'
+                captionKey: 'gennx-cap-06'
             },
             '07': {
                 mode: 'single',
                 primary: {
                     src: GENNX_FULL_SRC,
-                    alt: 'BestoDesigner Update List — Change로 gen 반영',
+                    altKey: 'gennx-alt-change',
                     highlights: [
                         { left: 16.1, top: 94.4, width: 4.1, height: 4.4, label: 'Change', labelPos: 'below' }
                     ]
                 },
-                caption: '07 · Update List 하단 Change로 목록 전체를 gen에 반영합니다. 반영된 행은 목록에서 제거됩니다.'
+                captionKey: 'gennx-cap-07'
             }
         };
 
@@ -4364,10 +4595,11 @@
                 el.style.width = box.width + '%';
                 el.style.height = box.height + '%';
                 if (box.labelPos) el.setAttribute('data-label-pos', box.labelPos);
-                if (box.label) {
+                const labelText = box.labelKey ? gennxT(box.labelKey, box.label) : box.label;
+                if (labelText) {
                     const label = document.createElement('span');
                     label.className = 'gennx-step-hotspot__label';
-                    label.textContent = box.label;
+                    label.textContent = labelText;
                     el.appendChild(label);
                 }
                 container.appendChild(el);
@@ -4400,12 +4632,15 @@
             media.setAttribute('data-mode', shot.mode);
 
             primaryImg.src = shot.primary.src;
-            primaryImg.alt = shot.primary.alt;
+            primaryImg.alt = gennxT(shot.primary.altKey, shot.primary.alt || '');
             primaryImg.setAttribute('data-full-src', shot.primary.src);
 
             if (primaryLabel) {
-                if (shot.primary.label) {
-                    primaryLabel.textContent = shot.primary.label;
+                const primaryLabelText = shot.primary.labelKey
+                    ? gennxT(shot.primary.labelKey, shot.primary.label)
+                    : shot.primary.label;
+                if (primaryLabelText) {
+                    primaryLabel.textContent = primaryLabelText;
                     primaryLabel.hidden = false;
                 } else {
                     primaryLabel.textContent = '';
@@ -4415,17 +4650,22 @@
 
             if (secondaryImg && shot.secondary) {
                 secondaryImg.src = shot.secondary.src;
-                secondaryImg.alt = shot.secondary.alt;
+                secondaryImg.alt = gennxT(shot.secondary.altKey, shot.secondary.alt || '');
                 secondaryImg.setAttribute('data-full-src', shot.secondary.src);
             }
             if (secondaryLabel) {
-                secondaryLabel.textContent = (shot.secondary && shot.secondary.label) || '';
+                const secondaryLabelText = shot.secondary
+                    ? (shot.secondary.labelKey
+                        ? gennxT(shot.secondary.labelKey, shot.secondary.label)
+                        : (shot.secondary.label || ''))
+                    : '';
+                secondaryLabel.textContent = secondaryLabelText;
             }
 
             renderGennxHotspots(primaryHotspots, shot.primary.highlights);
             renderGennxHotspots(secondaryHotspots, shot.secondary && shot.secondary.highlights);
 
-            caption.textContent = shot.caption;
+            caption.textContent = gennxT(shot.captionKey, shot.caption || '');
         }
 
         function openPluginShotModal(src, alt) {
